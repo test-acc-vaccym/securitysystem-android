@@ -23,6 +23,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import org.apache.cordova.*;
 
+import com.urbanairship.UAirship;
+
 public class SecuritySystem extends DroidGap
 {
     @Override
@@ -31,5 +33,19 @@ public class SecuritySystem extends DroidGap
         super.onCreate(savedInstanceState);
         super.loadUrl("file:///android_asset/www/index.html");
     }
+
+    /*    Uairship analytics (broken)
+    @Override
+    public void onStart() {
+        super.onStart();
+        UAirship.shared().getAnalytics().activityStarted(this);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        UAirship.shared().getAnalytics().activityStopped(this);
+    }
+    */
 }
 
