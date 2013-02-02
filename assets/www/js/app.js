@@ -49,7 +49,6 @@ $(document).on('click','.edit-gear',function(){
 });
 
 function reloadSensorList(){
-    alert('Updating Sensor List...');
     $('#sensorlist').empty();
     for(var i in sensors){
         if(sensors.hasOwnProperty(i)){

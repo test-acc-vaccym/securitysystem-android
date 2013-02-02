@@ -2,19 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60f71126-09f0-4df1-9b69-32d12aad38bd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/www/js/app.js" afterPath="$PROJECT_DIR$/assets/www/js/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/www/index.html" afterPath="$PROJECT_DIR$/assets/www/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SecuritySystem-Android.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/fragment.java" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359755989061" ignored="false" />
+    <file path="/fragment.java" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359766981894" ignored="false" />
     <file path="/index.html" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359765745932" ignored="false" />
     <file path="/app.js" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359766125236" ignored="false" />
     <file path="/sensorlist.html" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359760884277" ignored="false" />
-    <file path="/Dummy.txt" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359761523373" ignored="false" />
+    <file path="/Dummy.txt" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359767629410" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,19 +71,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="50" selection-start="3099" selection-end="3099" vertical-scroll-proportion="-18.518518">
+            <state line="5" column="106" selection-start="282" selection-end="282" vertical-scroll-proportion="0.12261581">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/www/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="67" selection-start="922" selection-end="922" vertical-scroll-proportion="0.6386334">
+            <state line="50" column="28" selection-start="1591" selection-end="1591" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -242,7 +240,7 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
   </component>
-  <component name="RunManager" selected="Android Application.Emulator">
+  <component name="RunManager" selected="Android Application.USB Device">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
@@ -386,6 +384,8 @@
       <option name="NETWORK_SPEED" value="full" />
       <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
+      <RunnerSettings RunnerId="AndroidDebugRunner" />
+      <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
       <method />
     </configuration>
     <list size="2">
@@ -512,16 +512,16 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/index.html">
+    <entry file="file://$PROJECT_DIR$/assets/www/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="50" selection-start="3099" selection-end="3099" vertical-scroll-proportion="-18.518518">
+        <state line="50" column="28" selection-start="1591" selection-end="1591" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/app.js">
+    <entry file="file://$PROJECT_DIR$/assets/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="67" selection-start="922" selection-end="922" vertical-scroll-proportion="0.6386334">
+        <state line="5" column="106" selection-start="282" selection-end="282" vertical-scroll-proportion="0.12261581">
           <folding />
         </state>
       </provider>
