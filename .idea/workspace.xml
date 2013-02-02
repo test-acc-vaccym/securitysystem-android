@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="60f71126-09f0-4df1-9b69-32d12aad38bd" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/www/js/app.js" afterPath="$PROJECT_DIR$/assets/www/js/app.js" />
-    </list>
+    <list default="true" id="60f71126-09f0-4df1-9b69-32d12aad38bd" name="Default" comment="" />
     <ignored path="SecuritySystem-Android.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/fragment.java" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359766981894" ignored="false" />
@@ -11,7 +9,7 @@
     <file path="/app.js" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359769048680" ignored="false" />
     <file path="/sensorlist.html" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359760884277" ignored="false" />
     <file path="/Dummy.txt" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359767629410" ignored="false" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359769109263" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359769117095" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
