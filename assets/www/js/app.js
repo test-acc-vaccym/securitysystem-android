@@ -1,7 +1,7 @@
 var sensors;
 
-function onLoad() {
-    document.addEventListener("deviceready", function () {
+$(document).on('deviceready', (function () {
+    $.getScript('js/PushNotification.js', function () {
         //push notification setup
         var push = window.pushNotification;
 
@@ -20,7 +20,9 @@ function onLoad() {
         push.registerEvent('registration', on_reg);
         push.registerEvent('push', on_push);
     });
-}
+}));
+
+
 
 //set some defaults before the app loads
 $(document).on("mobileinit", function () {
