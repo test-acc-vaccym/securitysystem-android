@@ -22,17 +22,10 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="All but buggy shit" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60f71126-09f0-4df1-9b69-32d12aad38bd" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/Osu/SecuritySystem/UAirshipInit.java" afterPath="$PROJECT_DIR$/src/com/Osu/SecuritySystem/MainApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/Osu/SecuritySystem/IntentReceiver.java" afterPath="$PROJECT_DIR$/src/com/Osu/SecuritySystem/IntentReceiver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/www/js/app.js" afterPath="$PROJECT_DIR$/assets/www/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/www/index.html" afterPath="$PROJECT_DIR$/assets/www/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="60f71126-09f0-4df1-9b69-32d12aad38bd" name="Default" comment="" />
     <ignored path="SecuritySystem-Android.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/fragment.java" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359824444097" ignored="false" />
+    <file path="/fragment.java" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359824760055" ignored="false" />
     <file path="/index.html" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359823677755" ignored="false" />
     <file path="/app.js" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359824140331" ignored="false" />
     <file path="/sensorlist.html" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359760884277" ignored="false" />
@@ -483,7 +476,7 @@
       <option name="MODE" value="default_activity" />
       <option name="DEPLOY" value="true" />
       <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="PREFERRED_AVD" value="Derp" />
+      <option name="PREFERRED_AVD" value="" />
       <option name="COMMAND_LINE" value="" />
       <option name="WIPE_USER_DATA" value="false" />
       <option name="DISABLE_BOOT_ANIMATION" value="false" />
