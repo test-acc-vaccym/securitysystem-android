@@ -80,7 +80,7 @@ public class IntentReceiver extends BroadcastReceiver {
 
             Intent launch = new Intent(Intent.ACTION_MAIN);
             launch.setClass(UAirship.shared().getApplicationContext(),
-                    UAirshipInit.class);
+                    SecuritySystem.class);
             launch.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP);
 
             PushNotificationPlugin.incomingAlert = alert;

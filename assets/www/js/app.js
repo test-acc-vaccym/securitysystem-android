@@ -1,5 +1,27 @@
 var sensors;
 
+function onLoad() {
+    document.addEventListener("deviceready", function () {
+        //push notification setup
+        var push = window.pushNotification;
+
+        function on_push(data) {
+            console.log("Received push: " + data.message);
+        }
+
+        function on_reg(error, pushID) {
+            if (!error) {
+                console.log("Reg Success: " + pushID);
+                $('#id').text(pushID);
+            }
+        }
+
+        push.enablePush();
+        push.registerEvent('registration', on_reg);
+        push.registerEvent('push', on_push);
+    });
+}
+
 //set some defaults before the app loads
 $(document).on("mobileinit", function () {
     $.mobile.defaultPageTransition = 'none';
@@ -17,20 +39,6 @@ $(document).on('pageinit', '#main', function () {
         ];
         window.localStorage.setItem('sensors', JSON.stringify(sensors));
     }
-});
-
-$(document).on('vclick','#reg-button',function(){
-    alert('button pushed!');
-    var push = window.pushNotification;
-    alert(push);
-
-    push.registerEvent('registration', function (id) {
-        alert("Registered with ID: " + id);
-    });
-
-    push.registerEvent('push', function (push) {
-        alert(push);
-    });
 });
 
 //reload the list every time the sensor page is loaded
