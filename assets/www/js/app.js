@@ -1,5 +1,11 @@
 var sensors;
 
+$(document).on("mobileinit", function(){
+    $.mobile.defaultPageTransition   = 'none';
+    $.mobile.defaultDialogTransition = 'none';
+    $.mobile.buttonMarkup.hoverDelay = 0;
+});
+
 //load sensors from HTML5 local storage
 $(document).on('pageinit','#main',function(){
     sensors = JSON.parse(localStorage.getItem('sensors'));
@@ -15,22 +21,26 @@ $(document).on('pagebeforeshow','#sensorpage',function(){
 });
 
 //reload the list every time a 'save' button is clicked
-$(document).on('click','.save-button',function(){
+$(document).on('vclick','.save-button',function(){
     reloadSensorList();
 });
 
 //add new sensor behavior
-$(document).on('click','#add-button',function(){
+$(document).on('vclick','#add-button',function(){
+    var name = $('#new-sensor-name');
+    var key = $('#new-sensor-key');
     var newsensor = [];
-    newsensor[0] = $('#new-sensor-name').val();
-    newsensor[1] = $('#new-sensor-key').val();
+    newsensor[0] = name.val();
+    newsensor[1] = key.val();
     sensors.push(newsensor);
     window.localStorage.setItem('sensors',JSON.stringify(sensors));
     reloadSensorList();
+    name.val('');
+    key.val('');
 });
 
 //delete sensor behavior
-$(document).on('click','#delete-sensor-button',function(){
+$(document).on('vclick','#delete-sensor-button',function(){
     var name = $(this).parent().parent().find('h3').text().substr(5);
     for(var i in sensors){
         if(sensors.hasOwnProperty(i)){
@@ -44,12 +54,13 @@ $(document).on('click','#delete-sensor-button',function(){
 });
 
 //set sensor name in edit header
-$(document).on('click','.edit-gear',function(){
+$(document).on('vclick','.edit-gear',function(){
     $('#edit').find('h3').text('Edit ' + $(this).parent().find('h3').text());
 });
 
 function reloadSensorList(){
-    $('#sensorlist').empty();
+    var sensorlist = $('#sensorlist');
+    sensorlist.empty();
     for(var i in sensors){
         if(sensors.hasOwnProperty(i)){
             var newItem = $('<li/>');
@@ -59,7 +70,7 @@ function reloadSensorList(){
             inner.append($('<p/>', {'text': sensors[i][1]}));
             newItem.append(inner);
             newItem.append($('<a/>', {'class':'edit-gear','href': '#edit', 'data-rel':'popup', 'data-transition':'pop', 'data-position-to':'window'}));
-            $('#sensorlist').append(newItem).listview('refresh');
+            sensorlist.append(newItem).listview('refresh');
         }
     }
 }
