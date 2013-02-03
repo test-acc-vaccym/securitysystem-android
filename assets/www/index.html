@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="format-detection" content="telephone=no" />
@@ -13,25 +13,12 @@
         <title>Security System</title>
     </head>
     <body>
-            <!-- Start of main page -->
-            <div data-role="page" id="main" data-theme="a">
-
-                <div data-role="header">
-                    <h1>Security System</h1>
-                </div>
-
-                <div data-role="content" data-theme="a">
-                    <p><a href="#sensorpage" data-role="button" data-theme="a" data-transition="slide">Sensor List</a></p>
-                </div>
-            </div>
-
 
             <!-- Start of sensor page -->
             <div data-role="page" id="sensorpage" data-theme="a">
                 <div data-role="header">
-                    <a href="#main" data-icon="back" data-transition="slide" data-direction="reverse">Back</a>
                     <h1>Sensor List</h1>
-                    <a href="#add" data-icon="add" data-rel="popup" data-position-to="window" data-transition="pop" data-theme="b">Add</a>
+                    <a href="#add" class="ui-btn-right" data-icon="add" data-rel="popup" data-position-to="window" data-transition="pop" data-theme="b">Add</a>
                 </div>
 
                 <div data-role="content" data-theme="a">
@@ -41,12 +28,15 @@
 
                     <div data-role="popup" id="add" data-theme="b" data-overlay-theme="b" class="ui-content">
                         <h3>Add A Sensor</h3>
-                        <label for="new-sensor-name">Name:</label>
-                        <input type="text" name="name" id="new-sensor-name" value=""/>
-                        <label for="new-sensor-key">Key:</label>
-                        <input type="text" name="name" id="new-sensor-key" value=""/>
-                        <a href="#" id="add-button" data-role="button" data-rel="back" data-theme="b" data-icon="check" data-inline="true" data-mini="true">Save</a>
-                        <a href="#" data-role="button" data-rel="back" data-inline="true" data-mini="true">Cancel</a>
+
+                        <form id="add-sensor-form">
+                            <label for="new-sensor-name">Name:</label>
+                            <input type="text" name="name" id="new-sensor-name" value="" placeholder="Front Door"/>
+                            <label for="new-sensor-key">Key:</label>
+                            <input type="text" name="name" id="new-sensor-key" value="" placeholder="##### (On Sensor)"/>
+                            <input type="submit" id="add-button" data-role="button" data-theme="b" data-icon="check" data-inline="true" value="Add"/>
+                            <a href="#" data-role="button" data-rel="back" data-inline="true">Cancel</a>
+                        </form>
                     </div>
 
                     <div data-role="popup" id="edit" data-theme="b" data-overlay-theme="b" class="ui-content">

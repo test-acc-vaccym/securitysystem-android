@@ -16,12 +16,11 @@ $(document).on('deviceready', (function () {
             }
         }
 
-        push.enablePush();
+        //push.enablePush();
         push.registerEvent('registration', on_reg);
         push.registerEvent('push', on_push);
     });
 }));
-
 
 
 //set some defaults before the app loads
@@ -31,37 +30,21 @@ $(document).on("mobileinit", function () {
     $.mobile.buttonMarkup.hoverDelay = 0;
 });
 
-//load sensors from HTML5 local storage
-$(document).on('pageinit', '#main', function () {
-    sensors = JSON.parse(localStorage.getItem('sensors'));
-    if (sensors == null) {
-        sensors = [
-            ['Example Sensor 1', '9182958135'],
-            ['Example Sensor 2', '124091240']
-        ];
-        window.localStorage.setItem('sensors', JSON.stringify(sensors));
-    }
-});
-
 //reload the list every time the sensor page is loaded
 $(document).on('pagebeforeshow', '#sensorpage', function () {
     reloadSensorList();
 });
 
-//reload the list every time a 'save' button is clicked
-$(document).on('vclick', '.save-button', function () {
-    reloadSensorList();
-});
 
 //add new sensor behavior
-$(document).on('vclick', '#add-button', function () {
+$(document).on('submit', '#add-sensor-form', function () {
     var name = $('#new-sensor-name');
     var key = $('#new-sensor-key');
     var newsensor = [];
     newsensor[0] = name.val();
     newsensor[1] = key.val();
     sensors.push(newsensor);
-    window.localStorage.setItem('sensors', JSON.stringify(sensors));
+    storeSensorList();
     reloadSensorList();
     name.val('');
     key.val('');
@@ -74,7 +57,7 @@ $(document).on('vclick', '#delete-sensor-button', function () {
         if (sensors.hasOwnProperty(i)) {
             if (sensors[i][0] == name) {
                 sensors.splice(i, 1);
-                window.localStorage.setItem('sensors', JSON.stringify(sensors));
+                storeSensorList();
                 reloadSensorList();
             }
         }
@@ -87,6 +70,14 @@ $(document).on('vclick', '.edit-gear', function () {
 });
 
 function reloadSensorList() {
+    //get sensors array from HTML5 localstorage
+    sensors = JSON.parse(localStorage.getItem('sensors'));
+    if (sensors == null) {
+        sensors = [];
+        storeSensorList();
+    }
+
+    //populate the listview with items from sensors array
     var sensorlist = $('#sensorlist');
     sensorlist.empty();
     for (var i in sensors) {
@@ -98,9 +89,14 @@ function reloadSensorList() {
             inner.append($('<p/>', {'text': sensors[i][1]}));
             newItem.append(inner);
             newItem.append($('<a/>', {'class': 'edit-gear', 'href': '#edit', 'data-rel': 'popup', 'data-transition': 'pop', 'data-position-to': 'window'}));
-            sensorlist.append(newItem).listview('refresh');
+            sensorlist.append(newItem);
         }
     }
+    sensorlist.listview('refresh');
+}
+
+function storeSensorList(){
+    window.localStorage.setItem('sensors', JSON.stringify(sensors));
 }
 
 
