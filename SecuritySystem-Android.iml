@@ -59,6 +59,8 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="jquery" level="application" />
+    <orderEntry type="library" name="jquery.mobile-1.2.0" level="application" />
   </component>
 </module>
 

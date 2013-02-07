@@ -40,8 +40,10 @@ $(document).on('submit','#add-sensor-form',function(){
 
     var name = $('#new-sensor-name').val();
     var id = $('#new-sensor-key').val();
-    if(pushID == null)
+    if(pushID === null) {
         pushID="";
+    }
+
 
     $.ajax({
         type: "POST",
@@ -73,8 +75,8 @@ function reloadSensorList(){
                 var newItem = $('<li/>');
                 var inner = $('<a/>', {'href': '#'});
                 inner.append($('<img/>', {'src': 'img/logo.png'}));
-                inner.append($('<h3/>', {'text': sensors[i]['sensor']['name'] }));
-                inner.append($('<p/>', {'text': sensors[i]['sensor']['sensor_id']}));
+                inner.append($('<h3/>', {'text': sensors[i].sensor.name }));
+                inner.append($('<p/>', {'text': sensors[i].sensor.sensor_id}));
                 newItem.append(inner);
                 newItem.append($('<a/>', {'class': 'edit-gear', 'href': '#edit', 'data-rel': 'popup', 'data-transition': 'pop', 'data-position-to': 'window'}));
                 sensorlist.append(newItem);
