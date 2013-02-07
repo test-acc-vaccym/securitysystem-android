@@ -10,8 +10,9 @@ $(document).on("mobileinit", function () {
 
 //set sensor information on edit popup
 $(document).on('vclick', '.edit-gear', function () {
-    $('#edit').find('h3').text('Edit ' + $(this).parent().find('h3').text());
-    $('#edit').find('p:first').text($(this).parent().find('p').text());
+    var edit = $('#edit');
+    edit.find('h3').text('Edit ' + $(this).parent().find('h3').text());
+    edit.find('p:first').text($(this).parent().find('p').text());
 });
 
 
