@@ -19,13 +19,14 @@
     </filters>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="apid" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="All but buggy shit" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60f71126-09f0-4df1-9b69-32d12aad38bd" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SecuritySystem-Android.iml" afterPath="$PROJECT_DIR$/SecuritySystem-Android.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/Osu/SecuritySystem/getAPID.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/Osu/SecuritySystem/SecuritySystem.java" afterPath="$PROJECT_DIR$/src/com/Osu/SecuritySystem/SecuritySystem.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/www/js/app.js" afterPath="$PROJECT_DIR$/assets/www/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/xml/config.xml" afterPath="$PROJECT_DIR$/res/xml/config.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/www/index.html" afterPath="$PROJECT_DIR$/assets/www/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -33,17 +34,21 @@
     <ignored path="SecuritySystem-Android.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/fragment.java" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359832261344" ignored="false" />
-    <file path="/index.html" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359912786030" ignored="false" />
-    <file path="/app.js" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359913643520" ignored="false" />
+    <file path="/index.html" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1360201508281" ignored="false" />
+    <file path="/app.js" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1360207835897" ignored="false" />
     <file path="/sensorlist.html" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359760884277" ignored="false" />
-    <file path="/Dummy.txt" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359911756402" ignored="false" />
+    <file path="/Dummy.txt" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1360192421881" ignored="false" />
     <file path="/IntentReceiver.java" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359822305458" ignored="false" />
-    <file path="/PushNotificationPlugin.java" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359828073103" ignored="false" />
-    <file path="/SecuritySystem.java" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359821693430" ignored="false" />
+    <file path="/PushNotificationPlugin.java" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1360192646480" ignored="false" />
+    <file path="/SecuritySystem.java" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1360207788963" ignored="false" />
     <file path="/UAirshipInit.java" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359778305302" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359822684198" ignored="false" />
     <file path="/PushNotification.js" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359782131937" ignored="false" />
     <file path="/a.dummy" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359827573342" ignored="false" />
+    <file path="/MainApplication.java" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1360204493118" ignored="false" />
+    <file path="/SendAPID.java" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1360205064614" ignored="false" />
+    <file path="/config.xml" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1360206597424" ignored="false" />
+    <file path="/getAPID.java" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1360207713708" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +110,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="99" selection-start="2105" selection-end="2105" vertical-scroll-proportion="-13.259259">
+            <state line="20" column="55" selection-start="1127" selection-end="1127" vertical-scroll-proportion="-10.666667">
               <folding />
             </state>
           </provider>
@@ -114,7 +119,7 @@
       <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/www/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="49" selection-start="1766" selection-end="1766" vertical-scroll-proportion="0.374">
+            <state line="79" column="28" selection-start="2569" selection-end="2569" vertical-scroll-proportion="1.512">
               <folding />
             </state>
           </provider>
@@ -144,15 +149,20 @@
         <option value="$PROJECT_DIR$/assets/airshipconfig.properties" />
         <option value="$PROJECT_DIR$/assets/location.properties" />
         <option value="$PROJECT_DIR$/assets/www/js/PushNotification.js" />
-        <option value="$PROJECT_DIR$/src/com/Osu/SecuritySystem/SecuritySystem.java" />
         <option value="$PROJECT_DIR$/src/com/Osu/SecuritySystem/IntentReceiver.java" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/com/Osu/SecuritySystem/PushNotificationPlugin.java" />
         <option value="$PROJECT_DIR$/assets/www/index.html" />
+        <option value="$PROJECT_DIR$/src/com/Osu/SecuritySystem/MainApplication.java" />
+        <option value="$PROJECT_DIR$/src/com/Osu/SecuritySystem/SendAPID.java" />
+        <option value="$PROJECT_DIR$/res/xml/config.xml" />
+        <option value="$PROJECT_DIR$/src/com/Osu/SecuritySystem/getAPID.java" />
+        <option value="$PROJECT_DIR$/src/com/Osu/SecuritySystem/SecuritySystem.java" />
         <option value="$PROJECT_DIR$/assets/www/js/app.js" />
       </list>
     </option>
   </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="width" value="1440" />
     <option name="height" value="900" />
@@ -199,6 +209,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -291,19 +303,17 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="options.lastSelected" value="Errors" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/www/index.html" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/www/js" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -314,6 +324,14 @@
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <PyConsoleSettings />
+    </option>
+    <option name="myDjangoConsoleState">
+      <PyConsoleSettings />
+    </option>
   </component>
   <component name="Regex">
     <option name="pos1" value="218" />
@@ -326,7 +344,7 @@
     <option name="referencePos" value="0" />
     <option name="showLabels" value="true" />
   </component>
-  <component name="RunManager" selected="Android Application.Emulator">
+  <component name="RunManager" selected="Android Application.USB Device">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
@@ -517,38 +535,43 @@
       <created>1359753134545</created>
       <updated>1359753134545</updated>
     </task>
+    <task id="LOCAL-00001" summary="remove main page, tweak sensor handling">
+      <created>1359913718988</created>
+      <updated>1359913718989</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32711443" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3254364" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Heroku" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Heroku" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39800996" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.56234413" sideWeight="0.5035868" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917705" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.58354115" sideWeight="0.4913917" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32793018" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.563591" sideWeight="0.4913917" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23529412" sideWeight="0.6728856" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25062343" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Regex" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24246772" sideWeight="0.6745636" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31421447" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Regex" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917705" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -557,8 +580,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
-    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <option name="myTodoPanelSettings">
       <value>
         <are-packages-shown value="false" />
@@ -590,7 +613,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove main page, tweak sensor handling" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -603,38 +626,107 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+    <MESSAGE value="remove main page, tweak sensor handling" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/www/css/images/icons-36-black.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/img/logo.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/location.properties">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="29" selection-start="74" selection-end="74" vertical-scroll-proportion="0.023255814" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/airshipconfig.properties">
+    <entry file="jar://$PROJECT_DIR$/libs/urbanairship-lib-2.0.5.jar!/com/urbanairship/push/PushManager.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="24" selection-start="252" selection-end="252" vertical-scroll-proportion="0.18604651" />
+        <state line="6" column="13" selection-start="164" selection-end="164" vertical-scroll-proportion="-1.6097561">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/cordova-2.3.0.jar!/org/apache/cordova/api/Plugin.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="56" selection-start="428" selection-end="428" vertical-scroll-proportion="0.34146342">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavascriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript5.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="7" selection-start="774" selection-end="774" vertical-scroll-proportion="0.33247423">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="55" selection-start="1127" selection-end="1127" vertical-scroll-proportion="-10.666667">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/cordova-2.3.0.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="775" column="16" selection-start="24944" selection-end="24944" vertical-scroll-proportion="-20.175">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/cordova-2.3.0.jar!/org/apache/cordova/DroidGap.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="161" selection-end="161" vertical-scroll-proportion="0.1682243">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/Osu/SecuritySystem/IntentReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="65" selection-start="2601" selection-end="2601" vertical-scroll-proportion="1.4883721">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-2.3693516">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/xml/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="94" selection-start="2956" selection-end="2956" vertical-scroll-proportion="0.7768595">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/Osu/SecuritySystem/PushNotificationPlugin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="100" column="44" selection-start="3438" selection-end="3438" vertical-scroll-proportion="0.55813956">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/PushNotification.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="258" column="48" selection-start="6776" selection-end="6776" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/Osu/SecuritySystem/MainApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="34" selection-start="421" selection-end="421" vertical-scroll-proportion="0.31764707">
+        <state line="12" column="25" selection-start="365" selection-end="365" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -643,74 +735,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/Osu/SecuritySystem/SecuritySystem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="41" selection-start="1218" selection-end="1218" vertical-scroll-proportion="0.0">
+        <state line="37" column="53" selection-start="1314" selection-end="1314" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#0#1568#0" expanded="true" />
+            <element signature="e#0#1709#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+    <entry file="file://$PROJECT_DIR$/src/com/Osu/SecuritySystem/getAPID.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="61" selection-start="5110" selection-end="5110" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/libs/cordova-2.3.0.jar!/org/apache/cordova/App.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="254" selection-end="254" vertical-scroll-proportion="-5.76" />
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/libs/cordova-2.3.0.jar!/org/apache/cordova/api/CordovaPlugin.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="187" selection-start="717" selection-end="899" vertical-scroll-proportion="0.39130434" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/PushNotification.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="244" column="47" selection-start="6463" selection-end="6463" vertical-scroll-proportion="0.44186047" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/Osu/SecuritySystem/IntentReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="65" selection-start="2601" selection-end="2601" vertical-scroll-proportion="0.0">
+        <state line="21" column="35" selection-start="588" selection-end="588" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/libs/cordova-2.3.0.jar!/org/apache/cordova/api/Plugin.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="74" selection-start="1181" selection-end="1181" vertical-scroll-proportion="0.3614035" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/Osu/SecuritySystem/PushNotificationPlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="44" selection-start="2271" selection-end="2271" vertical-scroll-proportion="0.25581396">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="99" selection-start="2105" selection-end="2105" vertical-scroll-proportion="-13.259259">
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="49" selection-start="1766" selection-end="1766" vertical-scroll-proportion="0.374">
+        <state line="79" column="28" selection-start="2569" selection-end="2569" vertical-scroll-proportion="1.512">
           <folding />
         </state>
       </provider>
@@ -773,6 +817,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -792,6 +837,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>js</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

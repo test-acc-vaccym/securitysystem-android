@@ -1,27 +1,4 @@
-var sensors;
-
-$(document).on('deviceready', (function () {
-    $.getScript('js/PushNotification.js', function () {
-        //push notification setup
-        var push = window.pushNotification;
-
-        function on_push(data) {
-            console.log("Received push: " + data.message);
-        }
-
-        function on_reg(error, pushID) {
-            if (!error) {
-                console.log("Reg Success: " + pushID);
-                $('#id').text(pushID);
-            }
-        }
-
-        //push.enablePush();
-        push.registerEvent('registration', on_reg);
-        push.registerEvent('push', on_push);
-    });
-}));
-
+var apiURL = 'http://securitysystem.herokuapp.com';
 
 //set some defaults before the app loads
 $(document).on("mobileinit", function () {
@@ -30,73 +7,79 @@ $(document).on("mobileinit", function () {
     $.mobile.buttonMarkup.hoverDelay = 0;
 });
 
-//reload the list every time the sensor page is loaded
-$(document).on('pagebeforeshow', '#sensorpage', function () {
-    reloadSensorList();
-});
 
-
-//add new sensor behavior
-$(document).on('submit', '#add-sensor-form', function () {
-    var name = $('#new-sensor-name');
-    var key = $('#new-sensor-key');
-    var newsensor = [];
-    newsensor[0] = name.val();
-    newsensor[1] = key.val();
-    sensors.push(newsensor);
-    storeSensorList();
-    reloadSensorList();
-    name.val('');
-    key.val('');
-});
-
-//delete sensor behavior
-$(document).on('vclick', '#delete-sensor-button', function () {
-    var name = $(this).parent().parent().find('h3').text().substr(5);
-    for (var i in sensors) {
-        if (sensors.hasOwnProperty(i)) {
-            if (sensors[i][0] == name) {
-                sensors.splice(i, 1);
-                storeSensorList();
-                reloadSensorList();
-            }
-        }
-    }
-});
-
-//set sensor name in edit header
+//set sensor information on edit popup
 $(document).on('vclick', '.edit-gear', function () {
     $('#edit').find('h3').text('Edit ' + $(this).parent().find('h3').text());
+    $('#edit').find('p:first').text($(this).parent().find('p').text());
 });
 
-function reloadSensorList() {
-    //get sensors array from HTML5 localstorage
-    sensors = JSON.parse(localStorage.getItem('sensors'));
-    if (sensors == null) {
-        sensors = [];
-        storeSensorList();
+
+//delete sensor
+$(document).on('vclick', '#delete-sensor-button', function () {
+    var id = $(this).parent().parent().find('p:first').text();
+    $.ajax({
+        type: "DELETE",
+        url: apiURL+"/sensors/"+id
+    }).done(function() {
+            reloadSensorList();
+        });
+});
+
+
+//add new sensor
+$(document).on('submit','#add-sensor-form',function(){
+    var pushID = "";
+
+    try{
+        pushID = window.getAPID.getAPID();
+    } catch(err){
+        alert("Couldn't get APID! "+err);
     }
 
-    //populate the listview with items from sensors array
-    var sensorlist = $('#sensorlist');
-    sensorlist.empty();
-    for (var i in sensors) {
-        if (sensors.hasOwnProperty(i)) {
-            var newItem = $('<li/>');
-            var inner = $('<a/>', {'href': '#'});
-            inner.append($('<img/>', {'src': 'img/logo.png'}));
-            inner.append($('<h3/>', {'text': sensors[i][0] }));
-            inner.append($('<p/>', {'text': sensors[i][1]}));
-            newItem.append(inner);
-            newItem.append($('<a/>', {'class': 'edit-gear', 'href': '#edit', 'data-rel': 'popup', 'data-transition': 'pop', 'data-position-to': 'window'}));
-            sensorlist.append(newItem);
+    var name = $('#new-sensor-name').val();
+    var id = $('#new-sensor-key').val();
+    if(pushID == null)
+        pushID="";
+
+    $.ajax({
+        type: "POST",
+        url: apiURL+"/sensors/",
+        data: {sensor: { name:name, sensor_id:id, enabled:true, tripped:false, client_apid:pushID }}
+    }).done(function() {
+            reloadSensorList();
+            $('#new-sensor-name').val('');
+            $('#new-sensor-key').val('');
+        });
+});
+
+$(document).on('vclick','#refresh-button',function(){
+    reloadSensorList();
+});
+
+//reload the sensor list
+$(document).on('pagebeforeshow', '#sensorpage',function () {
+    reloadSensorList();
+});
+
+function reloadSensorList(){
+    $.getJSON(apiURL+'/sensors.json', function(sensors){
+        //populate the listview with items from sensors array
+        var sensorlist = $('#sensorlist');
+        sensorlist.empty();
+        for (var i in sensors) {
+            if (sensors.hasOwnProperty(i)) {
+                var newItem = $('<li/>');
+                var inner = $('<a/>', {'href': '#'});
+                inner.append($('<img/>', {'src': 'img/logo.png'}));
+                inner.append($('<h3/>', {'text': sensors[i]['sensor']['name'] }));
+                inner.append($('<p/>', {'text': sensors[i]['sensor']['sensor_id']}));
+                newItem.append(inner);
+                newItem.append($('<a/>', {'class': 'edit-gear', 'href': '#edit', 'data-rel': 'popup', 'data-transition': 'pop', 'data-position-to': 'window'}));
+                sensorlist.append(newItem);
+            }
         }
-    }
-    sensorlist.listview('refresh');
+        sensorlist.listview('refresh');
+    });
+
 }
-
-function storeSensorList(){
-    window.localStorage.setItem('sensors', JSON.stringify(sensors));
-}
-
-

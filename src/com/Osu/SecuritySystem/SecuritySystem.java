@@ -27,10 +27,15 @@ import com.urbanairship.UAirship;
 
 public class SecuritySystem extends DroidGap
 {
+    getAPID apid;
+
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        super.init();
+        apid = new getAPID(this, appView);
+        appView.addJavascriptInterface(apid, "getAPID");
         super.loadUrl("file:///android_asset/www/index.html");
     }
 
