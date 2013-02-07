@@ -23,12 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60f71126-09f0-4df1-9b69-32d12aad38bd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/Osu/SecuritySystem/getAPID.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/Osu/SecuritySystem/SecuritySystem.java" afterPath="$PROJECT_DIR$/src/com/Osu/SecuritySystem/SecuritySystem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/www/js/app.js" afterPath="$PROJECT_DIR$/assets/www/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/xml/config.xml" afterPath="$PROJECT_DIR$/res/xml/config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/www/index.html" afterPath="$PROJECT_DIR$/assets/www/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SecuritySystem-Android.iws" />
@@ -37,7 +32,7 @@
     <file path="/index.html" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1360201508281" ignored="false" />
     <file path="/app.js" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1360207835897" ignored="false" />
     <file path="/sensorlist.html" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359760884277" ignored="false" />
-    <file path="/Dummy.txt" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1360192421881" ignored="false" />
+    <file path="/Dummy.txt" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1360208427209" ignored="false" />
     <file path="/IntentReceiver.java" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359822305458" ignored="false" />
     <file path="/PushNotificationPlugin.java" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1360192646480" ignored="false" />
     <file path="/SecuritySystem.java" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1360207788963" ignored="false" />
@@ -49,6 +44,7 @@
     <file path="/SendAPID.java" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1360205064614" ignored="false" />
     <file path="/config.xml" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1360206597424" ignored="false" />
     <file path="/getAPID.java" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1360207713708" ignored="false" />
+    <file path="/README" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1360208614265" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +106,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="55" selection-start="1127" selection-end="1127" vertical-scroll-proportion="-10.666667">
+            <state line="20" column="40" selection-start="1127" selection-end="1127" vertical-scroll-proportion="-10.666667">
               <folding />
             </state>
           </provider>
@@ -119,7 +115,7 @@
       <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/www/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="28" selection-start="2569" selection-end="2569" vertical-scroll-proportion="1.512">
+            <state line="79" column="13" selection-start="2569" selection-end="2569" vertical-scroll-proportion="1.512">
               <folding />
             </state>
           </provider>
@@ -143,7 +139,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/assets/www/sensorlist.html" />
         <option value="$PROJECT_DIR$/assets/www/js/sensorlist.js" />
         <option value="$PROJECT_DIR$/src/com/Osu/SecuritySystem/UAirshipInit.java" />
         <option value="$PROJECT_DIR$/assets/airshipconfig.properties" />
@@ -159,6 +154,7 @@
         <option value="$PROJECT_DIR$/src/com/Osu/SecuritySystem/getAPID.java" />
         <option value="$PROJECT_DIR$/src/com/Osu/SecuritySystem/SecuritySystem.java" />
         <option value="$PROJECT_DIR$/assets/www/js/app.js" />
+        <option value="$PROJECT_DIR$/README" />
       </list>
     </option>
   </component>
@@ -539,7 +535,11 @@
       <created>1359913718988</created>
       <updated>1359913718989</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="refactored whole app, wrote custom getAPID class to pass APID from Android to Javascript">
+      <created>1360208432315</created>
+      <updated>1360208432315</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -613,7 +613,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove main page, tweak sensor handling" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactored whole app, wrote custom getAPID class to pass APID from Android to Javascript" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -627,6 +627,7 @@
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
     <MESSAGE value="remove main page, tweak sensor handling" />
+    <MESSAGE value="refactored whole app, wrote custom getAPID class to pass APID from Android to Javascript" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -638,11 +639,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/libs/urbanairship-lib-2.0.5.jar!/com/urbanairship/push/PushManager.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="13" selection-start="164" selection-end="164" vertical-scroll-proportion="-1.6097561">
@@ -666,7 +662,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="55" selection-start="1127" selection-end="1127" vertical-scroll-proportion="-10.666667">
+        <state line="20" column="40" selection-start="1127" selection-end="1127" vertical-scroll-proportion="-10.666667">
           <folding />
         </state>
       </provider>
@@ -752,9 +748,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="44" selection-start="112" selection-end="112" vertical-scroll-proportion="0.046511628">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="28" selection-start="2569" selection-end="2569" vertical-scroll-proportion="1.512">
+        <state line="79" column="13" selection-start="2569" selection-end="2569" vertical-scroll-proportion="1.512">
           <folding />
         </state>
       </provider>
