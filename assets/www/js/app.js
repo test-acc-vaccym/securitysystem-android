@@ -1,5 +1,9 @@
 var apiURL = 'http://securitysystem.herokuapp.com';
 var oldKey = "";
+var viewSensorTrippedVar = $('#view-sensor-tripped');
+var viewSensorTrippedImgVar = $('#view-sensor-tripped-img');
+var viewSensorEnabledVar = $('#view-sensor-enabled');
+
 
 //set some defaults before the app loads
 $(document).on("mobileinit", function () {
@@ -27,19 +31,21 @@ $(document).on('vclick', '.view-button', function(){
             $('#view-sensor-name').text(sensor.sensor.name);
             $('#view-sensor-key').text(sensor.sensor.sensor_id);
             if(sensor.sensor.enabled){
-                $('#view-sensor-enabled').val('on').slider('refresh');
+                viewSensorEnabledVar.val('on').slider('refresh');
+                if(sensor.sensor.tripped){
+                    viewSensorTrippedImgVar.attr('src', 'img/danger.png');
+                    viewSensorTrippedVar.text("TRIPPED!");
+                }
+                else{
+                    viewSensorTrippedImgVar.attr('src', 'img/check.png');
+                    viewSensorTrippedVar.text("Not Tripped");
+                }
             }
             else {
-                $('#view-sensor-enabled').val('off').slider('refresh');
+                viewSensorEnabledVar.val('off').slider('refresh');
+                viewSensorTrippedImgVar.attr('src', 'img/disabled.png');
             }
-            if(sensor.sensor.tripped){
-                $('#view-sensor-tripped-img').attr('src', 'img/danger.png');
-                $('#view-sensor-tripped').text("TRIPPED!");
-            }
-            else{
-                $('#view-sensor-tripped-img').attr('src', 'img/check.png');
-                $('#view-sensor-tripped').text("Not Tripped");
-            }
+
         });
     }
     catch(error){
@@ -47,19 +53,41 @@ $(document).on('vclick', '.view-button', function(){
     }
 });
 
-//set disabled/tripped on view save
-$(document).on('vclick', '#view-sensor-save', function(){
+$(document).on('vclick', '#reset-button', function(){
+    viewSensorTrippedImgVar.attr('src', 'img/check.png');
+    viewSensorTrippedVar.text("Not Tripped");
+});
 
+$(document).on('slidestop', '#view-sensor-enabled', function(){
+    if(viewSensorEnabledVar.val() == 'on'){
+        if(viewSensorTrippedVar.text() == "TRIPPED!"){
+            viewSensorTrippedImgVar.attr('src', 'img/danger.png');
+            viewSensorTrippedVar.text("TRIPPED!");
+        }
+        else{
+            viewSensorTrippedImgVar.attr('src', 'img/check.png');
+            viewSensorTrippedVar.text("Not Tripped");
+        }
+    }
+    else {
+        viewSensorTrippedImgVar.attr('src', 'img/disabled.png');
+    }
+});
+
+
+//submit view
+$(document).on('vclick', '#view-sensor-save', function(){
+    var tripped = viewSensorTrippedVar.text() == "TRIPPED!";
     $.ajax({
         type: "PUT",
         url: apiURL+"/sensors/"+$('#view-sensor-key').text(),
-        data: {sensor: { enabled: $('#view-sensor-enabled').val() }}
+        data: {sensor: { enabled: viewSensorEnabledVar.val(), tripped: tripped }}
     }).done(function(){
             reloadSensorList();
         });
 });
 
-//edit sensor
+//submit edit sensor
 $(document).on('submit','#edit-sensor-form',function(){
     var name = $(this).find('#edit-sensor-name').val();
     var key = $(this).find('#edit-sensor-key').val();
@@ -72,7 +100,7 @@ $(document).on('submit','#edit-sensor-form',function(){
     });
 });
 
-//delete sensor
+//submit delete sensor
 $(document).on('vclick', '#delete-sensor-button', function () {
     $.ajax({
         type: "DELETE",
@@ -83,7 +111,7 @@ $(document).on('vclick', '#delete-sensor-button', function () {
 });
 
 
-//add new sensor
+//submit add new sensor
 $(document).on('submit','#add-sensor-form',function(){
     var pushID = "";
 
@@ -119,6 +147,7 @@ $(document).on('pagebeforeshow', '#sensorpage',function () {
 function reloadSensorList(){
 
     try{
+        $.mobile.loading('show');
         $.getJSON(apiURL+'/sensors.json', function(sensors){
             //populate the listview with items from sensors array
             var sensorlist = $('#sensorlist');
@@ -127,12 +156,19 @@ function reloadSensorList(){
                 if (sensors.hasOwnProperty(i)) {
                     var newItem = $('<li/>');
                     var inner = $('<a/>', {'class': 'view-button' ,'href': '#view', 'data-rel': 'popup', 'data-transition': 'pop', 'data-position-to': 'window'});
-                    if(sensors[i].sensor.tripped){
-                        inner.append($('<img/>', {'src': 'img/danger.png'}));
+
+                    if(sensors[i].sensor.enabled){
+                        if(sensors[i].sensor.tripped){
+                            inner.append($('<img/>', {'src': 'img/danger.png'}));
+                        }
+                        else {
+                            inner.append($('<img/>', {'src': 'img/check.png'}));
+                        }
                     }
-                    else {
-                        inner.append($('<img/>', {'src': 'img/check.png'}));
+                    else{
+                        inner.append($('<img/>', {'src': 'img/disabled.png'}));
                     }
+
                     inner.append($('<h3/>', {'text': sensors[i].sensor.name }));
                     inner.append($('<p/>', {'text': sensors[i].sensor.sensor_id}));
                     newItem.append(inner);
@@ -141,6 +177,7 @@ function reloadSensorList(){
                 }
             }
             sensorlist.listview('refresh');
+            $.mobile.loading('hide');
         });
     }
     catch(error){

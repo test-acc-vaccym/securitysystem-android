@@ -43,9 +43,9 @@
                             <input type="text" name="name" id="edit-sensor-name" value=""  />
                             <label for="edit-sensor-key">Key:</label>
                             <input type="text" name="sensor-id" id="edit-sensor-key" value=""  />
-                            <input type="submit" class="save-button" data-role="button" data-rel="back" data-theme="a" data-icon="check" data-inline="true" value="Save">
-                            <a href="#" id="delete-sensor-button" data-role="button" data-rel="back" data-theme="c" data-icon="delete" data-inline="true">Delete</a>
-                            <a href="#" data-role="button" data-rel="back" data-inline="true" data-theme="c">Cancel</a>
+                            <input type="submit" class="save-button" data-role="button" data-rel="back" data-theme="a" data-icon="check" data-inline="true" data-mini="true" value="Save">
+                            <a href="#" id="delete-sensor-button" data-role="button" data-rel="back" data-theme="c" data-icon="delete" data-inline="true" data-mini="true">Delete</a>
+                            <a href="#" data-role="button" data-rel="back" data-inline="true" data-theme="c" data-mini="true">Cancel</a>
                         </form>
                     </div>
 
@@ -60,11 +60,14 @@
                                 <option value="on">Enabled</option>
                             </select>
                         </div>
+                        <a id="reset-button" data-role="button">Reset</a>
 
                         <img id="view-sensor-tripped-img" src="" />
                         <p id="view-sensor-tripped"></p>
 
-                        <a id="view-sensor-save" href="#" data-role="button" data-rel="back" data-inline="true">Save</a>
+                        <div id="view-sensor-save-div">
+                            <a id="view-sensor-save" href="#" data-role="button" data-rel="back" data-inline="true">Save</a>
+                        </div>
                     </div>
                 </div>
             </div>
