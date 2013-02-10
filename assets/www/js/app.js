@@ -74,7 +74,12 @@ function reloadSensorList(){
             if (sensors.hasOwnProperty(i)) {
                 var newItem = $('<li/>');
                 var inner = $('<a/>', {'href': '#'});
-                inner.append($('<img/>', {'src': 'img/logo.png'}));
+                if(sensors[i].sensor.tripped){
+                    inner.append($('<img/>', {'src': 'img/danger.png'}));
+                }
+                else {
+                    inner.append($('<img/>', {'src': 'img/check.png'}));
+                }
                 inner.append($('<h3/>', {'text': sensors[i].sensor.name }));
                 inner.append($('<p/>', {'text': sensors[i].sensor.sensor_id}));
                 newItem.append(inner);

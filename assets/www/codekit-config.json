@@ -44,17 +44,6 @@
       "initialSize" : 1610434,
       "fileType" : 8192
     },
-    "\/js\/PushNotification.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/PushNotification.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/js\/PushNotification-ck.js",
-      "fileType" : 64
-    },
     "\/res\/screen\/ios\/screen-ipad-landscape-2x.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -65,6 +54,17 @@
       "outputAbbreviatedPath" : "\/res\/screen\/ios\/screen-ipad-landscape-2x.png",
       "initialSize" : 1534088,
       "fileType" : 8192
+    },
+    "\/spec\/lib\/jasmine-1.2.0\/jasmine.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/spec\/lib\/jasmine-1.2.0\/jasmine.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/spec\/lib\/jasmine-1.2.0\/jasmine-ck.js",
+      "fileType" : 64
     },
     "\/css\/images\/icons-36-white.png" : {
       "ignoreWasSetByUser" : 0,
@@ -77,15 +77,15 @@
       "initialSize" : 66763,
       "fileType" : 8192
     },
-    "\/spec\/lib\/jasmine-1.2.0\/jasmine.js" : {
+    "\/js\/PushNotification.js" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/spec\/lib\/jasmine-1.2.0\/jasmine.js",
+      "inputAbbreviatedPath" : "\/js\/PushNotification.js",
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/spec\/lib\/jasmine-1.2.0\/jasmine-ck.js",
+      "outputAbbreviatedPath" : "\/js\/PushNotification-ck.js",
       "fileType" : 64
     },
     "\/spec\/index.js" : {
@@ -298,6 +298,17 @@
       "initialSize" : 4944,
       "fileType" : 8192
     },
+    "\/img\/danger.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/danger.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/danger.png",
+      "initialSize" : 22258,
+      "fileType" : 8192
+    },
     "\/img\/logo.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -307,6 +318,17 @@
       "processed" : 1,
       "outputAbbreviatedPath" : "\/img\/logo.png",
       "initialSize" : 21814,
+      "fileType" : 8192
+    },
+    "\/img\/check.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/check.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/check.png",
+      "initialSize" : 17920,
       "fileType" : 8192
     },
     "\/js\/app.js" : {
@@ -320,17 +342,6 @@
       "outputAbbreviatedPath" : "\/js\/app-ck.js",
       "fileType" : 64
     },
-    "\/res\/screen\/ios\/screen-iphone-portrait.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/res\/screen\/ios\/screen-iphone-portrait.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/res\/screen\/ios\/screen-iphone-portrait.png",
-      "initialSize" : 93897,
-      "fileType" : 8192
-    },
     "\/cordova-2.3.0.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -341,6 +352,17 @@
       "syntaxCheckerStyle" : 0,
       "outputAbbreviatedPath" : "\/cordova-2.3.0-ck.js",
       "fileType" : 64
+    },
+    "\/res\/screen\/ios\/screen-iphone-portrait.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/res\/screen\/ios\/screen-iphone-portrait.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/res\/screen\/ios\/screen-iphone-portrait.png",
+      "initialSize" : 93897,
+      "fileType" : 8192
     },
     "\/spec\/helper.js" : {
       "ignoreWasSetByUser" : 0,
