@@ -267,14 +267,16 @@
       "outputAbbreviatedPath" : "\/js\/jquery.mobile-1.3.0-beta.1-ck.js",
       "fileType" : 64
     },
-    "\/index.html" : {
+    "\/img\/check.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/index.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
+      "inputAbbreviatedPath" : "\/img\/check.png",
+      "processed" : 1,
+      "outputAbbreviatedPath" : "\/img\/check.png",
+      "initialSize" : 17920,
+      "fileType" : 8192
     },
     "\/css\/images\/icons-36-black.png" : {
       "ignoreWasSetByUser" : 0,
@@ -331,16 +333,14 @@
       "outputAbbreviatedPath" : "\/js\/app-ck.js",
       "fileType" : 64
     },
-    "\/img\/check.png" : {
+    "\/index.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/check.png",
-      "processed" : 1,
-      "outputAbbreviatedPath" : "\/img\/check.png",
-      "initialSize" : 17920,
-      "fileType" : 8192
+      "inputAbbreviatedPath" : "\/index.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/css\/custom.css" : {
       "ignoreWasSetByUser" : 0,

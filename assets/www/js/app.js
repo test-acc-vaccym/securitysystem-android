@@ -32,6 +32,14 @@ $(document).on('vclick', '.view-button', function(){
             else {
                 $('#view-sensor-enabled').val('off').slider('refresh');
             }
+            if(sensor.sensor.tripped){
+                $('#view-sensor-tripped-img').attr('src', 'img/danger.png');
+                $('#view-sensor-tripped').text("TRIPPED!");
+            }
+            else{
+                $('#view-sensor-tripped-img').attr('src', 'img/check.png');
+                $('#view-sensor-tripped').text("Not Tripped");
+            }
         });
     }
     catch(error){
@@ -39,6 +47,7 @@ $(document).on('vclick', '.view-button', function(){
     }
 });
 
+//set disabled/tripped on view save
 $(document).on('vclick', '#view-sensor-save', function(){
 
     $.ajax({
