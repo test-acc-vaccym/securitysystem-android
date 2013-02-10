@@ -3,7 +3,6 @@
   <component name="JSHintConfiguration">
     <option bitwise="true" />
     <option curly="true" />
-    <option eqeqeq="true" />
     <option forin="true" />
     <option noarg="true" />
     <option noempty="true" />

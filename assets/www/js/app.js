@@ -20,7 +20,34 @@ $(document).on('vclick', '.edit-gear', function () {
 
 //set sensor information on view popup
 $(document).on('vclick', '.view-button', function(){
+    var key = $(this).find('p').text();
 
+    try{
+        $.getJSON(apiURL+'/sensors/'+key, function(sensor){
+            $('#view-sensor-name').text(sensor.sensor.name);
+            $('#view-sensor-key').text(sensor.sensor.sensor_id);
+            if(sensor.sensor.enabled){
+                $('#view-sensor-enabled').val('on').slider('refresh');
+            }
+            else {
+                $('#view-sensor-enabled').val('off').slider('refresh');
+            }
+        });
+    }
+    catch(error){
+        alert("Couldn't fetch sensor info!");
+    }
+});
+
+$(document).on('vclick', '#view-sensor-save', function(){
+
+    $.ajax({
+        type: "PUT",
+        url: apiURL+"/sensors/"+$('#view-sensor-key').text(),
+        data: {sensor: { enabled: $('#view-sensor-enabled').val() }}
+    }).done(function(){
+            reloadSensorList();
+        });
 });
 
 //edit sensor
