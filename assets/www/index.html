@@ -25,24 +25,33 @@
 
                     <div data-role="popup" id="add" data-theme="b" data-overlay-theme="b" class="ui-content">
                         <h3>Add A Sensor</h3>
-
                         <form id="add-sensor-form">
                             <label for="new-sensor-name">Name:</label>
                             <input type="text" name="name" id="new-sensor-name" value="" placeholder="Front Door"/>
                             <label for="new-sensor-key">Key:</label>
-                            <input type="text" name="name" id="new-sensor-key" value="" placeholder="##### (On Sensor)"/>
+                            <input type="text" name="key" id="new-sensor-key" value="" placeholder="##### (On Sensor)"/>
                             <input type="submit" id="add-button" data-role="button" data-theme="b" data-icon="check" data-inline="true" value="Add"/>
                             <a href="#" data-role="button" data-rel="back" data-inline="true">Cancel</a>
                         </form>
                     </div>
 
                     <div data-role="popup" id="edit" data-theme="b" data-overlay-theme="b" class="ui-content">
-                        <h3>Edit SENSOR</h3>
-                        <p class="sensor-id"></p>
-                        <p>Edit that shit, yo!</p>
-                        <a href="#" class="save-button" data-role="button" data-rel="back" data-theme="b" data-icon="check" data-inline="true" data-mini="true">Save</a>
-                        <a href="#" id="delete-sensor-button" data-role="button" data-rel="back" data-theme="c" data-icon="delete" data-inline="true" data-mini="true">Delete</a>
-                        <a href="#" data-role="button" data-rel="back" data-inline="true" data-mini="true">Cancel</a>
+                        <h3>Edit Sensor</h3>
+                        <form id="edit-sensor-form">
+                            <label for="edit-sensor-name">Name:</label>
+                            <input type="text" name="name" id="edit-sensor-name" value=""  />
+                            <label for="edit-sensor-key">Key:</label>
+                            <input type="text" name="sensor-id" id="edit-sensor-key" value=""  />
+                            <input type="submit" class="save-button" data-role="button" data-rel="back" data-theme="b" data-icon="check" data-inline="true" value="Save">
+                            <a href="#" id="delete-sensor-button" data-role="button" data-rel="back" data-theme="c" data-icon="delete" data-inline="true">Delete</a>
+                            <a href="#" data-role="button" data-rel="back" data-inline="true">Cancel</a>
+                        </form>
+                    </div>
+
+                    <div data-role="popup" id="view" data-theme="b" data-overlay-theme="b" class="ui-content">
+                        <h3>Sensor Details:</h3>
+                        <p id="view-sensor-name"></p>
+                        <a href="#" data-role="button" data-rel="back" data-inline="true">Close</a>
                     </div>
                 </div>
             </div>
