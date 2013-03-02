@@ -46,15 +46,15 @@
       "outputAbbreviatedPath" : "\/js\/PushNotification-ck.js",
       "fileType" : 64
     },
-    "\/res\/screen\/ios\/screen-ipad-landscape-2x.png" : {
+    "\/res\/screen\/ios\/screen-ipad-portrait-2x.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/res\/screen\/ios\/screen-ipad-landscape-2x.png",
+      "inputAbbreviatedPath" : "\/res\/screen\/ios\/screen-ipad-portrait-2x.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/res\/screen\/ios\/screen-ipad-landscape-2x.png",
-      "initialSize" : 1534088,
+      "outputAbbreviatedPath" : "\/res\/screen\/ios\/screen-ipad-portrait-2x.png",
+      "initialSize" : 1610434,
       "fileType" : 8192
     },
     "\/css\/images\/icons-36-white.png" : {
@@ -90,15 +90,15 @@
       "outputAbbreviatedPath" : "\/spec\/index-ck.js",
       "fileType" : 64
     },
-    "\/res\/screen\/ios\/screen-ipad-portrait-2x.png" : {
+    "\/res\/screen\/ios\/screen-ipad-landscape-2x.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/res\/screen\/ios\/screen-ipad-portrait-2x.png",
+      "inputAbbreviatedPath" : "\/res\/screen\/ios\/screen-ipad-landscape-2x.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/res\/screen\/ios\/screen-ipad-portrait-2x.png",
-      "initialSize" : 1610434,
+      "outputAbbreviatedPath" : "\/res\/screen\/ios\/screen-ipad-landscape-2x.png",
+      "initialSize" : 1534088,
       "fileType" : 8192
     },
     "\/res\/icon\/ios\/icon-57.png" : {

@@ -12,7 +12,6 @@ $(document).on("mobileinit", function () {
     $.mobile.buttonMarkup.hoverDelay = 0;
 });
 
-
 //set sensor information on edit popup
 $(document).on('vclick', '.edit-gear', function () {
     var key = $(this).parent().find('p').text();
@@ -53,11 +52,18 @@ $(document).on('vclick', '.view-button', function(){
     }
 });
 
+//reset sensor
 $(document).on('vclick', '#reset-button', function(){
-    viewSensorTrippedImgVar.attr('src', 'img/check.png');
-    viewSensorTrippedVar.text("Not Tripped");
+    if(viewSensorEnabledVar.val() == 'on'){
+        viewSensorTrippedImgVar.attr('src', 'img/check.png');
+        viewSensorTrippedVar.text("Not Tripped");
+    }
+    else{
+        viewSensorTrippedImgVar.attr('src', 'img/disabled.png');
+    }
 });
 
+//enable/disable sensor
 $(document).on('slidestop', '#view-sensor-enabled', function(){
     if(viewSensorEnabledVar.val() == 'on'){
         if(viewSensorTrippedVar.text() == "TRIPPED!"){
@@ -74,8 +80,7 @@ $(document).on('slidestop', '#view-sensor-enabled', function(){
     }
 });
 
-
-//submit view
+//submit save sensor
 $(document).on('vclick', '#view-sensor-save', function(){
     var tripped = viewSensorTrippedVar.text() == "TRIPPED!";
     $.ajax({
@@ -109,7 +114,6 @@ $(document).on('vclick', '#delete-sensor-button', function () {
             reloadSensorList();
         });
 });
-
 
 //submit add new sensor
 $(document).on('submit','#add-sensor-form',function(){
@@ -145,7 +149,6 @@ $(document).on('pagebeforeshow', '#sensorpage',function () {
 });
 
 function reloadSensorList(){
-
     try{
         $.mobile.loading('show');
         $.getJSON(apiURL+'/sensors.json', function(sensors){
@@ -183,6 +186,5 @@ function reloadSensorList(){
     catch(error){
         alert("Couldn't get the sensor list!");
     }
-
 
 }
