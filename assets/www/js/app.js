@@ -33,16 +33,17 @@ $(document).on('vclick', '.view-button', function(){
                 viewSensorEnabledVar.val('on').slider('refresh');
                 if(sensor.sensor.tripped){
                     viewSensorTrippedImgVar.attr('src', 'img/danger.png');
-                    viewSensorTrippedVar.text("TRIPPED!");
+                    viewSensorTrippedVar.text("TRIPPED");
                 }
                 else{
                     viewSensorTrippedImgVar.attr('src', 'img/check.png');
-                    viewSensorTrippedVar.text("Not Tripped");
+                    viewSensorTrippedVar.text("Ready");
                 }
             }
             else {
                 viewSensorEnabledVar.val('off').slider('refresh');
                 viewSensorTrippedImgVar.attr('src', 'img/disabled.png');
+                viewSensorTrippedVar.text("Disabled");
             }
 
         });
@@ -56,33 +57,35 @@ $(document).on('vclick', '.view-button', function(){
 $(document).on('vclick', '#reset-button', function(){
     if(viewSensorEnabledVar.val() == 'on'){
         viewSensorTrippedImgVar.attr('src', 'img/check.png');
-        viewSensorTrippedVar.text("Not Tripped");
+        viewSensorTrippedVar.text("Ready");
     }
     else{
         viewSensorTrippedImgVar.attr('src', 'img/disabled.png');
+        viewSensorTrippedVar.text("Disabled");
     }
 });
 
 //enable/disable sensor
 $(document).on('slidestop', '#view-sensor-enabled', function(){
     if(viewSensorEnabledVar.val() == 'on'){
-        if(viewSensorTrippedVar.text() == "TRIPPED!"){
+        if(viewSensorTrippedVar.text() == "TRIPPED"){
             viewSensorTrippedImgVar.attr('src', 'img/danger.png');
-            viewSensorTrippedVar.text("TRIPPED!");
+            viewSensorTrippedVar.text("TRIPPED");
         }
         else{
             viewSensorTrippedImgVar.attr('src', 'img/check.png');
-            viewSensorTrippedVar.text("Not Tripped");
+            viewSensorTrippedVar.text("Ready");
         }
     }
     else {
         viewSensorTrippedImgVar.attr('src', 'img/disabled.png');
+        viewSensorTrippedVar.text("Disabled");
     }
 });
 
 //submit save sensor
 $(document).on('vclick', '#view-sensor-save', function(){
-    var tripped = viewSensorTrippedVar.text() == "TRIPPED!";
+    var tripped = viewSensorTrippedVar.text() == "TRIPPED";
     $.ajax({
         type: "PUT",
         url: apiURL+"/sensors/"+$('#view-sensor-key').text(),
