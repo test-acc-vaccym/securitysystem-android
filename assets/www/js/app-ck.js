@@ -6032,333 +6032,6 @@ window.cordova = require('cordova');
 })();
 
 /* **********************************************
-     Begin handlebars.runtime.js
-********************************************** */
-
-/*
-
-Copyright (C) 2011 by Yehuda Katz
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-
-*/
-
-// lib/handlebars/base.js
-
-/*jshint eqnull:true*/
-this.Handlebars = {};
-
-(function(Handlebars) {
-
-Handlebars.VERSION = "1.0.0-rc.3";
-Handlebars.COMPILER_REVISION = 2;
-
-Handlebars.REVISION_CHANGES = {
-  1: '<= 1.0.rc.2', // 1.0.rc.2 is actually rev2 but doesn't report it
-  2: '>= 1.0.0-rc.3'
-};
-
-Handlebars.helpers  = {};
-Handlebars.partials = {};
-
-Handlebars.registerHelper = function(name, fn, inverse) {
-  if(inverse) { fn.not = inverse; }
-  this.helpers[name] = fn;
-};
-
-Handlebars.registerPartial = function(name, str) {
-  this.partials[name] = str;
-};
-
-Handlebars.registerHelper('helperMissing', function(arg) {
-  if(arguments.length === 2) {
-    return undefined;
-  } else {
-    throw new Error("Could not find property '" + arg + "'");
-  }
-});
-
-var toString = Object.prototype.toString, functionType = "[object Function]";
-
-Handlebars.registerHelper('blockHelperMissing', function(context, options) {
-  var inverse = options.inverse || function() {}, fn = options.fn;
-
-
-  var ret = "";
-  var type = toString.call(context);
-
-  if(type === functionType) { context = context.call(this); }
-
-  if(context === true) {
-    return fn(this);
-  } else if(context === false || context == null) {
-    return inverse(this);
-  } else if(type === "[object Array]") {
-    if(context.length > 0) {
-      return Handlebars.helpers.each(context, options);
-    } else {
-      return inverse(this);
-    }
-  } else {
-    return fn(context);
-  }
-});
-
-Handlebars.K = function() {};
-
-Handlebars.createFrame = Object.create || function(object) {
-  Handlebars.K.prototype = object;
-  var obj = new Handlebars.K();
-  Handlebars.K.prototype = null;
-  return obj;
-};
-
-Handlebars.logger = {
-  DEBUG: 0, INFO: 1, WARN: 2, ERROR: 3, level: 3,
-
-  methodMap: {0: 'debug', 1: 'info', 2: 'warn', 3: 'error'},
-
-  // can be overridden in the host environment
-  log: function(level, obj) {
-    if (Handlebars.logger.level <= level) {
-      var method = Handlebars.logger.methodMap[level];
-      if (typeof console !== 'undefined' && console[method]) {
-        console[method].call(console, obj);
-      }
-    }
-  }
-};
-
-Handlebars.log = function(level, obj) { Handlebars.logger.log(level, obj); };
-
-Handlebars.registerHelper('each', function(context, options) {
-  var fn = options.fn, inverse = options.inverse;
-  var i = 0, ret = "", data;
-
-  if (options.data) {
-    data = Handlebars.createFrame(options.data);
-  }
-
-  if(context && typeof context === 'object') {
-    if(context instanceof Array){
-      for(var j = context.length; i<j; i++) {
-        if (data) { data.index = i; }
-        ret = ret + fn(context[i], { data: data });
-      }
-    } else {
-      for(var key in context) {
-        if(context.hasOwnProperty(key)) {
-          if(data) { data.key = key; }
-          ret = ret + fn(context[key], {data: data});
-          i++;
-        }
-      }
-    }
-  }
-
-  if(i === 0){
-    ret = inverse(this);
-  }
-
-  return ret;
-});
-
-Handlebars.registerHelper('if', function(context, options) {
-  var type = toString.call(context);
-  if(type === functionType) { context = context.call(this); }
-
-  if(!context || Handlebars.Utils.isEmpty(context)) {
-    return options.inverse(this);
-  } else {
-    return options.fn(this);
-  }
-});
-
-Handlebars.registerHelper('unless', function(context, options) {
-  var fn = options.fn, inverse = options.inverse;
-  options.fn = inverse;
-  options.inverse = fn;
-
-  return Handlebars.helpers['if'].call(this, context, options);
-});
-
-Handlebars.registerHelper('with', function(context, options) {
-  return options.fn(context);
-});
-
-Handlebars.registerHelper('log', function(context, options) {
-  var level = options.data && options.data.level != null ? parseInt(options.data.level, 10) : 1;
-  Handlebars.log(level, context);
-});
-
-}(this.Handlebars));
-;
-// lib/handlebars/utils.js
-
-var errorProps = ['description', 'fileName', 'lineNumber', 'message', 'name', 'number', 'stack'];
-
-Handlebars.Exception = function(message) {
-  var tmp = Error.prototype.constructor.apply(this, arguments);
-
-  // Unfortunately errors are not enumerable in Chrome (at least), so `for prop in tmp` doesn't work.
-  for (var idx = 0; idx < errorProps.length; idx++) {
-    this[errorProps[idx]] = tmp[errorProps[idx]];
-  }
-};
-Handlebars.Exception.prototype = new Error();
-
-// Build out our basic SafeString type
-Handlebars.SafeString = function(string) {
-  this.string = string;
-};
-Handlebars.SafeString.prototype.toString = function() {
-  return this.string.toString();
-};
-
-(function() {
-  var escape = {
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&#x27;",
-    "`": "&#x60;"
-  };
-
-  var badChars = /[&<>"'`]/g;
-  var possible = /[&<>"'`]/;
-
-  var escapeChar = function(chr) {
-    return escape[chr] || "&amp;";
-  };
-
-  Handlebars.Utils = {
-    escapeExpression: function(string) {
-      // don't escape SafeStrings, since they're already safe
-      if (string instanceof Handlebars.SafeString) {
-        return string.toString();
-      } else if (string == null || string === false) {
-        return "";
-      }
-
-      if(!possible.test(string)) { return string; }
-      return string.replace(badChars, escapeChar);
-    },
-
-    isEmpty: function(value) {
-      if (!value && value !== 0) {
-        return true;
-      } else if(Object.prototype.toString.call(value) === "[object Array]" && value.length === 0) {
-        return true;
-      } else {
-        return false;
-      }
-    }
-  };
-})();;
-// lib/handlebars/runtime.js
-Handlebars.VM = {
-  template: function(templateSpec) {
-    // Just add water
-    var container = {
-      escapeExpression: Handlebars.Utils.escapeExpression,
-      invokePartial: Handlebars.VM.invokePartial,
-      programs: [],
-      program: function(i, fn, data) {
-        var programWrapper = this.programs[i];
-        if(data) {
-          return Handlebars.VM.program(fn, data);
-        } else if(programWrapper) {
-          return programWrapper;
-        } else {
-          programWrapper = this.programs[i] = Handlebars.VM.program(fn);
-          return programWrapper;
-        }
-      },
-      programWithDepth: Handlebars.VM.programWithDepth,
-      noop: Handlebars.VM.noop,
-      compilerInfo: null
-    };
-
-    return function(context, options) {
-      options = options || {};
-      var result = templateSpec.call(container, Handlebars, context, options.helpers, options.partials, options.data);
-
-      var compilerInfo = container.compilerInfo || [],
-          compilerRevision = compilerInfo[0] || 1,
-          currentRevision = Handlebars.COMPILER_REVISION;
-
-      if (compilerRevision !== currentRevision) {
-        if (compilerRevision < currentRevision) {
-          var runtimeVersions = Handlebars.REVISION_CHANGES[currentRevision],
-              compilerVersions = Handlebars.REVISION_CHANGES[compilerRevision];
-          throw "Template was precompiled with an older version of Handlebars than the current runtime. "+
-                "Please update your precompiler to a newer version ("+runtimeVersions+") or downgrade your runtime to an older version ("+compilerVersions+").";
-        } else {
-          // Use the embedded version info since the runtime doesn't know about this revision yet
-          throw "Template was precompiled with a newer version of Handlebars than the current runtime. "+
-                "Please update your runtime to a newer version ("+compilerInfo[1]+").";
-        }
-      }
-
-      return result;
-    };
-  },
-
-  programWithDepth: function(fn, data, $depth) {
-    var args = Array.prototype.slice.call(arguments, 2);
-
-    return function(context, options) {
-      options = options || {};
-
-      return fn.apply(this, [context, options.data || data].concat(args));
-    };
-  },
-  program: function(fn, data) {
-    return function(context, options) {
-      options = options || {};
-
-      return fn(context, options.data || data);
-    };
-  },
-  noop: function() { return ""; },
-  invokePartial: function(partial, name, context, helpers, partials, data) {
-    var options = { helpers: helpers, partials: partials, data: data };
-
-    if(partial === undefined) {
-      throw new Handlebars.Exception("The partial " + name + " could not be found");
-    } else if(partial instanceof Function) {
-      return partial(context, options);
-    } else if (!Handlebars.compile) {
-      throw new Handlebars.Exception("The partial " + name + " could not be compiled when running in runtime-only mode");
-    } else {
-      partials[name] = Handlebars.compile(partial, {data: data !== undefined});
-      return partials[name](context, options);
-    }
-  }
-};
-
-Handlebars.template = Handlebars.VM.template;
-;
-
-
-/* **********************************************
      Begin jquery-1.9.0.js
 ********************************************** */
 
@@ -27016,6 +26689,333 @@ $.mobile.document.bind( "pagecreate create", function( e ) {
 
 
 /* **********************************************
+     Begin handlebars.runtime.js
+********************************************** */
+
+/*
+
+Copyright (C) 2011 by Yehuda Katz
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+*/
+
+// lib/handlebars/base.js
+
+/*jshint eqnull:true*/
+this.Handlebars = {};
+
+(function(Handlebars) {
+
+Handlebars.VERSION = "1.0.0-rc.3";
+Handlebars.COMPILER_REVISION = 2;
+
+Handlebars.REVISION_CHANGES = {
+  1: '<= 1.0.rc.2', // 1.0.rc.2 is actually rev2 but doesn't report it
+  2: '>= 1.0.0-rc.3'
+};
+
+Handlebars.helpers  = {};
+Handlebars.partials = {};
+
+Handlebars.registerHelper = function(name, fn, inverse) {
+  if(inverse) { fn.not = inverse; }
+  this.helpers[name] = fn;
+};
+
+Handlebars.registerPartial = function(name, str) {
+  this.partials[name] = str;
+};
+
+Handlebars.registerHelper('helperMissing', function(arg) {
+  if(arguments.length === 2) {
+    return undefined;
+  } else {
+    throw new Error("Could not find property '" + arg + "'");
+  }
+});
+
+var toString = Object.prototype.toString, functionType = "[object Function]";
+
+Handlebars.registerHelper('blockHelperMissing', function(context, options) {
+  var inverse = options.inverse || function() {}, fn = options.fn;
+
+
+  var ret = "";
+  var type = toString.call(context);
+
+  if(type === functionType) { context = context.call(this); }
+
+  if(context === true) {
+    return fn(this);
+  } else if(context === false || context == null) {
+    return inverse(this);
+  } else if(type === "[object Array]") {
+    if(context.length > 0) {
+      return Handlebars.helpers.each(context, options);
+    } else {
+      return inverse(this);
+    }
+  } else {
+    return fn(context);
+  }
+});
+
+Handlebars.K = function() {};
+
+Handlebars.createFrame = Object.create || function(object) {
+  Handlebars.K.prototype = object;
+  var obj = new Handlebars.K();
+  Handlebars.K.prototype = null;
+  return obj;
+};
+
+Handlebars.logger = {
+  DEBUG: 0, INFO: 1, WARN: 2, ERROR: 3, level: 3,
+
+  methodMap: {0: 'debug', 1: 'info', 2: 'warn', 3: 'error'},
+
+  // can be overridden in the host environment
+  log: function(level, obj) {
+    if (Handlebars.logger.level <= level) {
+      var method = Handlebars.logger.methodMap[level];
+      if (typeof console !== 'undefined' && console[method]) {
+        console[method].call(console, obj);
+      }
+    }
+  }
+};
+
+Handlebars.log = function(level, obj) { Handlebars.logger.log(level, obj); };
+
+Handlebars.registerHelper('each', function(context, options) {
+  var fn = options.fn, inverse = options.inverse;
+  var i = 0, ret = "", data;
+
+  if (options.data) {
+    data = Handlebars.createFrame(options.data);
+  }
+
+  if(context && typeof context === 'object') {
+    if(context instanceof Array){
+      for(var j = context.length; i<j; i++) {
+        if (data) { data.index = i; }
+        ret = ret + fn(context[i], { data: data });
+      }
+    } else {
+      for(var key in context) {
+        if(context.hasOwnProperty(key)) {
+          if(data) { data.key = key; }
+          ret = ret + fn(context[key], {data: data});
+          i++;
+        }
+      }
+    }
+  }
+
+  if(i === 0){
+    ret = inverse(this);
+  }
+
+  return ret;
+});
+
+Handlebars.registerHelper('if', function(context, options) {
+  var type = toString.call(context);
+  if(type === functionType) { context = context.call(this); }
+
+  if(!context || Handlebars.Utils.isEmpty(context)) {
+    return options.inverse(this);
+  } else {
+    return options.fn(this);
+  }
+});
+
+Handlebars.registerHelper('unless', function(context, options) {
+  var fn = options.fn, inverse = options.inverse;
+  options.fn = inverse;
+  options.inverse = fn;
+
+  return Handlebars.helpers['if'].call(this, context, options);
+});
+
+Handlebars.registerHelper('with', function(context, options) {
+  return options.fn(context);
+});
+
+Handlebars.registerHelper('log', function(context, options) {
+  var level = options.data && options.data.level != null ? parseInt(options.data.level, 10) : 1;
+  Handlebars.log(level, context);
+});
+
+}(this.Handlebars));
+;
+// lib/handlebars/utils.js
+
+var errorProps = ['description', 'fileName', 'lineNumber', 'message', 'name', 'number', 'stack'];
+
+Handlebars.Exception = function(message) {
+  var tmp = Error.prototype.constructor.apply(this, arguments);
+
+  // Unfortunately errors are not enumerable in Chrome (at least), so `for prop in tmp` doesn't work.
+  for (var idx = 0; idx < errorProps.length; idx++) {
+    this[errorProps[idx]] = tmp[errorProps[idx]];
+  }
+};
+Handlebars.Exception.prototype = new Error();
+
+// Build out our basic SafeString type
+Handlebars.SafeString = function(string) {
+  this.string = string;
+};
+Handlebars.SafeString.prototype.toString = function() {
+  return this.string.toString();
+};
+
+(function() {
+  var escape = {
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#x27;",
+    "`": "&#x60;"
+  };
+
+  var badChars = /[&<>"'`]/g;
+  var possible = /[&<>"'`]/;
+
+  var escapeChar = function(chr) {
+    return escape[chr] || "&amp;";
+  };
+
+  Handlebars.Utils = {
+    escapeExpression: function(string) {
+      // don't escape SafeStrings, since they're already safe
+      if (string instanceof Handlebars.SafeString) {
+        return string.toString();
+      } else if (string == null || string === false) {
+        return "";
+      }
+
+      if(!possible.test(string)) { return string; }
+      return string.replace(badChars, escapeChar);
+    },
+
+    isEmpty: function(value) {
+      if (!value && value !== 0) {
+        return true;
+      } else if(Object.prototype.toString.call(value) === "[object Array]" && value.length === 0) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  };
+})();;
+// lib/handlebars/runtime.js
+Handlebars.VM = {
+  template: function(templateSpec) {
+    // Just add water
+    var container = {
+      escapeExpression: Handlebars.Utils.escapeExpression,
+      invokePartial: Handlebars.VM.invokePartial,
+      programs: [],
+      program: function(i, fn, data) {
+        var programWrapper = this.programs[i];
+        if(data) {
+          return Handlebars.VM.program(fn, data);
+        } else if(programWrapper) {
+          return programWrapper;
+        } else {
+          programWrapper = this.programs[i] = Handlebars.VM.program(fn);
+          return programWrapper;
+        }
+      },
+      programWithDepth: Handlebars.VM.programWithDepth,
+      noop: Handlebars.VM.noop,
+      compilerInfo: null
+    };
+
+    return function(context, options) {
+      options = options || {};
+      var result = templateSpec.call(container, Handlebars, context, options.helpers, options.partials, options.data);
+
+      var compilerInfo = container.compilerInfo || [],
+          compilerRevision = compilerInfo[0] || 1,
+          currentRevision = Handlebars.COMPILER_REVISION;
+
+      if (compilerRevision !== currentRevision) {
+        if (compilerRevision < currentRevision) {
+          var runtimeVersions = Handlebars.REVISION_CHANGES[currentRevision],
+              compilerVersions = Handlebars.REVISION_CHANGES[compilerRevision];
+          throw "Template was precompiled with an older version of Handlebars than the current runtime. "+
+                "Please update your precompiler to a newer version ("+runtimeVersions+") or downgrade your runtime to an older version ("+compilerVersions+").";
+        } else {
+          // Use the embedded version info since the runtime doesn't know about this revision yet
+          throw "Template was precompiled with a newer version of Handlebars than the current runtime. "+
+                "Please update your runtime to a newer version ("+compilerInfo[1]+").";
+        }
+      }
+
+      return result;
+    };
+  },
+
+  programWithDepth: function(fn, data, $depth) {
+    var args = Array.prototype.slice.call(arguments, 2);
+
+    return function(context, options) {
+      options = options || {};
+
+      return fn.apply(this, [context, options.data || data].concat(args));
+    };
+  },
+  program: function(fn, data) {
+    return function(context, options) {
+      options = options || {};
+
+      return fn(context, options.data || data);
+    };
+  },
+  noop: function() { return ""; },
+  invokePartial: function(partial, name, context, helpers, partials, data) {
+    var options = { helpers: helpers, partials: partials, data: data };
+
+    if(partial === undefined) {
+      throw new Handlebars.Exception("The partial " + name + " could not be found");
+    } else if(partial instanceof Function) {
+      return partial(context, options);
+    } else if (!Handlebars.compile) {
+      throw new Handlebars.Exception("The partial " + name + " could not be compiled when running in runtime-only mode");
+    } else {
+      partials[name] = Handlebars.compile(partial, {data: data !== undefined});
+      return partials[name](context, options);
+    }
+  }
+};
+
+Handlebars.template = Handlebars.VM.template;
+;
+
+
+/* **********************************************
      Begin PushNotification.js
 ********************************************** */
 
@@ -27408,9 +27408,9 @@ function program15(depth0,data) {
 
   buffer += "<h3>Sensor Details:</h3>\n<p>Name: "
     + escapeExpression(((stack1 = ((stack1 = depth0.sensor),stack1 == null || stack1 === false ? stack1 : stack1.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</p>\n<p>Key: "
+    + "</p>\n<p>Key: <span class=\"view-sensor-key\">"
     + escapeExpression(((stack1 = ((stack1 = depth0.sensor),stack1 == null || stack1 === false ? stack1 : stack1.sensor_id)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</p>\n\n<div class=\"enabled-slider\">\n    <select name=\"flip-min\" id=\"view-sensor-enabled\" data-role=\"slider\" data-theme=\"a\" data-track-theme=\"a\">\n        <option value=\"off\" ";
+    + "</span></p>\n\n<div class=\"enabled-slider\">\n    <select name=\"flip-min\" id=\"view-sensor-enabled\" data-role=\"slider\" data-theme=\"a\" data-track-theme=\"a\">\n        <option value=\"off\" ";
   stack2 = helpers.unless.call(depth0, ((stack1 = depth0.sensor),stack1 == null || stack1 === false ? stack1 : stack1.enabled), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack2 || stack2 === 0) { buffer += stack2; }
   buffer += ">Disabled</option>\n        <option value=\"on\" ";
@@ -27431,12 +27431,6 @@ function program15(depth0,data) {
      Begin app.js
 ********************************************** */
 
-var apiURL = 'http://securitysystem.herokuapp.com';
-var oldKey = "";
-var viewSensorTrippedVar = $('#view-sensor-tripped');
-var viewSensorTrippedImgVar = $('#view-sensor-tripped-img');
-var viewSensorEnabledVar = $('#view-sensor-enabled');
-
 //set some defaults before the app loads
 $(document).on("mobileinit", function () {
     $.mobile.defaultPageTransition = 'none';
@@ -27450,6 +27444,7 @@ var App = {
         this.apiURL = 'http://securitysystem.herokuapp.com';
         this.oldKey = "";
         this.cacheElements();
+        this.bindEvents();
         this.fetchSensors();
     },
     cacheElements: function(){
@@ -27458,13 +27453,24 @@ var App = {
         this.$viewSensorTrippedText = $('#view-sensor-tripped');
         this.$viewSensorTrippedImg = $('#view-sensor-tripped-img');
         this.$viewSensorEnabled = $('#view-sensor-enabled');
+        this.$newSensorKey = $('#new-sensor-key');
+        this.$newSensorName = $('#new-sensor-name');
+        this.$editSensorKey = $('#edit-sensor-key');
+        this.$editSensorName = $('#edit-sensor-name');
         this.$sensorList = $('#sensorlist');
         this.$viewWindow = $('#inner-view');
         this.$page = $('#sensorpage');
     },
     bindEvents: function(){
         this.$sensorList.on('vclick', '.view-button', this.viewSensor);
-        $.on('vclick','#refresh-button', this.fetchSensors);
+        this.$sensorList.on('vclick', '.edit-gear', this.editSensor);
+        this.$page.on('vclick','#refresh-button', this.fetchSensors);
+        this.$page.on('submit','#add-sensor-form', this.submitAdd);
+        this.$page.on('submit','#edit-sensor-form', this.submitEdit);
+        this.$page.on('vclick', '#delete-sensor-button', this.submitDelete);
+        this.$page.on('vclick', '#view-sensor-save', this.submitSave);
+        this.$page.on('vclick', '#reset-button', this.resetSensor);
+        this.$page.on('slidestop', '#view-sensor-enabled', this.enableDisable);
     },
     storeSensors: function (data) {
         localStorage.setItem('ss-sensors', JSON.stringify(data));
@@ -27477,7 +27483,7 @@ var App = {
     fetchSensors:function(){
         try{
             $.mobile.loading('show');
-            $.getJSON(this.apiURL+'/sensors.json', this.storeSensors);
+            $.getJSON(App.apiURL+'/sensors.json', App.storeSensors);
             $.mobile.loading('hide');
         }
         catch(error){
@@ -27485,24 +27491,102 @@ var App = {
         }
     },
     refreshSensorList: function(){
-        this.$sensorList.empty();
-        this.$sensorList.html(this.listTemplate(this.loadSensors()));
-        this.$sensorList.listview('refresh');
+        App.$sensorList.empty();
+        App.$sensorList.html(App.listTemplate(App.loadSensors()));
+        App.$sensorList.listview('refresh');
     },
     refreshSensorView: function(key){
         var sensors = this.loadSensors();
-        var sensor;
-        for(var s in sensors) {
-            if(s.sensor_id == key && sensors.hasOwnProperty(s)) {
-                sensor = s;
+        var sensor = null;
+        $.each(sensors, function (i, sens) {
+            if (sens.sensor.sensor_id == key) {
+                sensor = sens;
             }
-        }
-        console.log(s);
+        });
         this.$viewWindow.html(this.viewTemplate(sensor)).trigger('create');
     },
     viewSensor: function(){
         var key = $(this).find('p').text();
-        this.refreshSensorView(key);
+        App.refreshSensorView(key);
+    },
+    submitAdd: function(){
+        var pushID = "";
+        var name = App.$newSensorName.val();
+        var id = App.$newSensorKey.val();
+        try{
+            pushID = window.getAPID.getAPID();
+        } catch(err){
+            alert("Couldn't get APID!");
+            pushID = " ";
+        }
+        $.ajax({
+            type: "POST",
+            url: App.apiURL+"/sensors/",
+            data: {sensor: { name:name, sensor_id:id, enabled:true, tripped:false, client_apid:pushID }}
+        }).done(function() {
+                App.$newSensorName.val('');
+                App.$newSensorKey.val('');
+                App.fetchSensors();
+            });
+    },
+    editSensor: function() {
+        var key = $(this).parent().find('p').text();
+        App.$editSensorName.val($(this).parent().find('h3').text());
+        App.$editSensorKey.val(key);
+        App.oldKey = key;
+    },
+    submitEdit: function(){
+        $.ajax({
+            type: "PUT",
+            url: App.apiURL+"/sensors/"+App.oldKey,
+            data: {sensor: { name:App.$editSensorName.val(), sensor_id:App.$editSensorKey.val() }}
+        }).done(function() {
+                App.fetchSensors();
+        });
+    },
+    submitDelete: function(){
+        $.ajax({
+            type: "DELETE",
+            url: App.apiURL+"/sensors/"+App.oldKey
+        }).done(function() {
+                App.fetchSensors();
+        });
+    },
+    submitSave: function(){
+        var tripped = App.$viewSensorTrippedText.text() == "TRIPPED";
+        $.ajax({
+            type: "PUT",
+            url: App.apiURL+"/sensors/"+$('span.view-sensor-key').text(),
+            data: {sensor: { enabled: App.$viewSensorEnabled.val(), tripped: tripped }}
+        }).done(function(){
+                App.fetchSensors();
+        });
+    },
+    resetSensor: function(){
+        if(App.$viewSensorEnabled.val() == 'on'){
+            App.$viewSensorTrippedImg.attr('src', 'img/check.png');
+            App.$viewSensorTrippedText.text("Ready");
+        }
+        else{
+            App.$viewSensorTrippedImg.attr('src', 'img/disabled.png');
+            App.$viewSensorTrippedText.text("Disabled");
+        }
+    },
+    enableDisable: function(){
+        if(App.$viewSensorEnabled.val() == 'on'){
+            if(App.$viewSensorTrippedText.text() == "TRIPPED"){
+                App.$viewSensorTrippedImg.attr('src', 'img/danger.png');
+                App.$viewSensorTrippedText.text("TRIPPED");
+            }
+            else{
+                App.$viewSensorTrippedImg.attr('src', 'img/check.png');
+                App.$viewSensorTrippedText.text("Ready");
+            }
+        }
+        else {
+            App.$viewSensorTrippedImg.attr('src', 'img/disabled.png');
+            App.$viewSensorTrippedText.text("Disabled");
+        }
     }
 
 };
@@ -27511,105 +27595,4 @@ App.init();
 
 });
 
-
-
-
-//set sensor information on edit popup
-$(document).on('vclick', '.edit-gear', function () {
-    var key = $(this).parent().find('p').text();
-    var edit = $('#edit');
-    edit.find('#edit-sensor-name').val($(this).parent().find('h3').text());
-    edit.find('#edit-sensor-key').val(key);
-    oldKey = key;
-});
-
-//reset sensor
-$(document).on('vclick', '#reset-button', function(){
-    if(viewSensorEnabledVar.val() == 'on'){
-        viewSensorTrippedImgVar.attr('src', 'img/check.png');
-        viewSensorTrippedVar.text("Ready");
-    }
-    else{
-        viewSensorTrippedImgVar.attr('src', 'img/disabled.png');
-        viewSensorTrippedVar.text("Disabled");
-    }
-});
-
-//enable/disable sensor
-$(document).on('slidestop', '#view-sensor-enabled', function(){
-    if(viewSensorEnabledVar.val() == 'on'){
-        if(viewSensorTrippedVar.text() == "TRIPPED"){
-            viewSensorTrippedImgVar.attr('src', 'img/danger.png');
-            viewSensorTrippedVar.text("TRIPPED");
-        }
-        else{
-            viewSensorTrippedImgVar.attr('src', 'img/check.png');
-            viewSensorTrippedVar.text("Ready");
-        }
-    }
-    else {
-        viewSensorTrippedImgVar.attr('src', 'img/disabled.png');
-        viewSensorTrippedVar.text("Disabled");
-    }
-});
-
-//submit save sensor
-$(document).on('vclick', '#view-sensor-save', function(){
-    var tripped = viewSensorTrippedVar.text() == "TRIPPED";
-    $.ajax({
-        type: "PUT",
-        url: apiURL+"/sensors/"+$('#view-sensor-key').text(),
-        data: {sensor: { enabled: viewSensorEnabledVar.val(), tripped: tripped }}
-    }).done(function(){
-            reloadSensorList();
-        });
-});
-
-//submit edit sensor
-$(document).on('submit','#edit-sensor-form',function(){
-    var name = $(this).find('#edit-sensor-name').val();
-    var key = $(this).find('#edit-sensor-key').val();
-    $.ajax({
-        type: "PUT",
-        url: apiURL+"/sensors/"+oldKey,
-        data: {sensor: { name:name, sensor_id:key }}
-    }).done(function() {
-            reloadSensorList();
-    });
-});
-
-//submit delete sensor
-$(document).on('vclick', '#delete-sensor-button', function () {
-    $.ajax({
-        type: "DELETE",
-        url: apiURL+"/sensors/"+oldKey
-    }).done(function() {
-            reloadSensorList();
-        });
-});
-
-//submit add new sensor
-$(document).on('submit','#add-sensor-form',function(){
-    var pushID = "";
-
-    try{
-        pushID = window.getAPID.getAPID();
-    } catch(err){
-        alert("Couldn't get APID!");
-        pushID = " ";
-    }
-
-    var name = $('#new-sensor-name').val();
-    var id = $('#new-sensor-key').val();
-
-    $.ajax({
-        type: "POST",
-        url: apiURL+"/sensors/",
-        data: {sensor: { name:name, sensor_id:id, enabled:true, tripped:false, client_apid:pushID }}
-    }).done(function() {
-            reloadSensorList();
-            $('#new-sensor-name').val('');
-            $('#new-sensor-key').val('');
-        });
-});
 

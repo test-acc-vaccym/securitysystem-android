@@ -63,9 +63,9 @@ function program15(depth0,data) {
 
   buffer += "<h3>Sensor Details:</h3>\n<p>Name: "
     + escapeExpression(((stack1 = ((stack1 = depth0.sensor),stack1 == null || stack1 === false ? stack1 : stack1.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</p>\n<p>Key: "
+    + "</p>\n<p>Key: <span class=\"view-sensor-key\">"
     + escapeExpression(((stack1 = ((stack1 = depth0.sensor),stack1 == null || stack1 === false ? stack1 : stack1.sensor_id)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</p>\n\n<div class=\"enabled-slider\">\n    <select name=\"flip-min\" id=\"view-sensor-enabled\" data-role=\"slider\" data-theme=\"a\" data-track-theme=\"a\">\n        <option value=\"off\" ";
+    + "</span></p>\n\n<div class=\"enabled-slider\">\n    <select name=\"flip-min\" id=\"view-sensor-enabled\" data-role=\"slider\" data-theme=\"a\" data-track-theme=\"a\">\n        <option value=\"off\" ";
   stack2 = helpers.unless.call(depth0, ((stack1 = depth0.sensor),stack1 == null || stack1 === false ? stack1 : stack1.enabled), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack2 || stack2 === 0) { buffer += stack2; }
   buffer += ">Disabled</option>\n        <option value=\"on\" ";
