@@ -11,9 +11,9 @@ var App = {
     init: function(){
         this.apiURL = 'http://securitysystem.herokuapp.com';
         this.oldKey = "";
+        this.sensors = [];
         this.cacheElements();
         this.bindEvents();
-        this.sensors = [];
         this.fetchSensors();
     },
     cacheElements: function(){
@@ -28,16 +28,19 @@ var App = {
         this.$page = $('#sensorpage');
     },
     bindEvents: function(){
-        this.$sensorList.on('vclick', '.view-button', this.viewSensor);
-        this.$sensorList.on('vclick', '.edit-gear', this.editSensor);
-        this.$page.on('vclick','#refresh-button', this.fetchSensors);
+        this.$sensorList.on('click', '.view-button', this.viewSensor);
+        this.$sensorList.on('click', '.edit-gear', this.editSensor);
+        this.$page.on('click','#refresh-button', this.fetchSensors);
         this.$page.on('submit','#add-sensor-form', this.submitAdd);
         this.$page.on('submit','#edit-sensor-form', this.submitEdit);
-        this.$page.on('vclick', '#delete-sensor-button', this.submitDelete);
-        this.$page.on('vclick', '.view-sensor-save', this.submitSave);
-        this.$page.on('vclick', '.reset-button', this.resetSensor);
+        this.$page.on('click', '#delete-sensor-button', this.submitDelete);
+        this.$page.on('click', '.view-sensor-save', this.submitSave);
+        this.$page.on('click', '.reset-button', this.resetSensor);
         this.$page.on('slidestop', '.view-sensor-enabled', this.enableDisable);
-        this.$page.on('pagebeforeshow', this.fetchSensors);
+        this.$page.on('pageshow', 'div#sensorpage', this.pageShow);
+    },
+    pageShow: function(){
+        alert("loaded");
     },
     fetchSensors: function(){
         try{
@@ -46,6 +49,7 @@ var App = {
                 App.sensors = data;
                 App.refreshSensorList();
                 $.mobile.loading('hide');
+                return false;
             });
         }
         catch(error){
@@ -56,9 +60,11 @@ var App = {
         App.$sensorList.html(App.listTemplate(App.sensors));
         App.$sensorList.trigger('create');
         App.$sensorList.listview('refresh');
+        return false;
     },
     refreshSensorView: function(i,sensor){
         this.$viewWindow.html(this.viewTemplate(sensor)).trigger('create');
+        return false;
     },
     viewSensor: function(){
         App.getSensor(this,App.refreshSensorView);
@@ -141,6 +147,7 @@ var App = {
             img.attr('src', 'img/disabled.png');
             tripped.text("Disabled");
         }
+        return false;
     },
     enableDisable: function(){
         var img = $(this).parent().parent().find('.view-sensor-tripped-img');
@@ -161,10 +168,11 @@ var App = {
             img.attr('src', 'img/disabled.png');
             tripped.text("Disabled");
         }
+        return false;
     }
 };
 
-App.init();
+    App.init();
 
 });
 
