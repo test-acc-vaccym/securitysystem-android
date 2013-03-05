@@ -1,6 +1,6 @@
 .enabled-slider .ui-slider-switch { width: 9em }
 
-#view-sensor-tripped-img {width: 9em; height: 9em }
+.view-sensor-tripped-img {width: 9em; height: 9em }
 
 #view p { text-align: center}
 #view-sensor-save-div { text-align: center }
@@ -39,4 +39,14 @@
     text-shadow: none;
     box-shadow: none;
     -webkit-box-shadow: none;
+}
+
+body {
+    margin: 0;
+}
+
+#container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
