@@ -1,0 +1,10 @@
+{{#this}}
+    <li>
+        <a class="view-button" href="#view" data-rel="popup" data-transition="pop" data-position-to="window">
+            <img src="{{#if sensor.enabled}}{{#if sensor.tripped}}img/danger.png{{else}}img/check.png{{/if}}{{else}}img/disabled.png{{/if}}"/>
+            <h3>{{sensor.name}}</h3>
+            <p>{{sensor.sensor_id}}</p>
+        </a>
+        <a class="edit-gear" href="#edit" data-rel="popup" data-transition="pop" data-position-to="window"></a>
+    </li>
+{{/this}}

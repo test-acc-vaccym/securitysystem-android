@@ -157,31 +157,9 @@ function reloadSensorList(){
         $.getJSON(apiURL+'/sensors.json', function(sensors){
             //populate the listview with items from sensors array
             var sensorlist = $('#sensorlist');
+            var sensortemplate = Handlebars.templates.sensor;
             sensorlist.empty();
-            for (var i in sensors) {
-                if (sensors.hasOwnProperty(i)) {
-                    var newItem = $('<li/>');
-                    var inner = $('<a/>', {'class': 'view-button' ,'href': '#view', 'data-rel': 'popup', 'data-transition': 'pop', 'data-position-to': 'window'});
-
-                    if(sensors[i].sensor.enabled){
-                        if(sensors[i].sensor.tripped){
-                            inner.append($('<img/>', {'src': 'img/danger.png'}));
-                        }
-                        else {
-                            inner.append($('<img/>', {'src': 'img/check.png'}));
-                        }
-                    }
-                    else{
-                        inner.append($('<img/>', {'src': 'img/disabled.png'}));
-                    }
-
-                    inner.append($('<h3/>', {'text': sensors[i].sensor.name }));
-                    inner.append($('<p/>', {'text': sensors[i].sensor.sensor_id}));
-                    newItem.append(inner);
-                    newItem.append($('<a/>', {'class': 'edit-gear', 'href': '#edit', 'data-rel': 'popup', 'data-transition': 'pop', 'data-position-to': 'window'}));
-                    sensorlist.append(newItem);
-                }
-            }
+            sensorlist.html(sensortemplate(sensors));
             sensorlist.listview('refresh');
             $.mobile.loading('hide');
         });

@@ -7,7 +7,6 @@
     <option noarg="true" />
     <option noempty="true" />
     <option nonew="true" />
-    <option undef="true" />
     <option es5="true" />
     <option browser="true" />
     <option devel="true" />
