@@ -27297,7 +27297,9 @@ helpers = helpers || Handlebars.helpers; data = data || {};
 function program1(depth0,data) {
   
   var buffer = "", stack1, stack2;
-  buffer += "\n    <li>\n        <a class=\"view-button\" href=\"#view\" data-rel=\"popup\" data-transition=\"pop\" data-position-to=\"window\">\n            <img src=\"";
+  buffer += "\n    <li data-sensorid=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.sensor),stack1 == null || stack1 === false ? stack1 : stack1.sensor_id)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">\n        <a class=\"view-button\" href=\"#view\" data-rel=\"popup\" data-transition=\"pop\" data-position-to=\"window\">\n            <img src=\"";
   stack2 = helpers['if'].call(depth0, ((stack1 = depth0.sensor),stack1 == null || stack1 === false ? stack1 : stack1.enabled), {hash:{},inverse:self.program(7, program7, data),fn:self.program(2, program2, data),data:data});
   if(stack2 || stack2 === 0) { buffer += stack2; }
   buffer += "\"/>\n            <h3>"
@@ -27410,19 +27412,19 @@ function program15(depth0,data) {
     + escapeExpression(((stack1 = ((stack1 = depth0.sensor),stack1 == null || stack1 === false ? stack1 : stack1.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "</p>\n<p>Key: <span class=\"view-sensor-key\">"
     + escapeExpression(((stack1 = ((stack1 = depth0.sensor),stack1 == null || stack1 === false ? stack1 : stack1.sensor_id)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</span></p>\n\n<div class=\"enabled-slider\">\n    <select name=\"flip-min\" id=\"view-sensor-enabled\" data-role=\"slider\" data-theme=\"a\" data-track-theme=\"a\">\n        <option value=\"off\" ";
+    + "</span></p>\n\n<div class=\"enabled-slider\">\n    <select name=\"flip-min\" class=\"view-sensor-enabled\" data-role=\"slider\" data-theme=\"a\" data-track-theme=\"a\">\n        <option value=\"off\" ";
   stack2 = helpers.unless.call(depth0, ((stack1 = depth0.sensor),stack1 == null || stack1 === false ? stack1 : stack1.enabled), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack2 || stack2 === 0) { buffer += stack2; }
   buffer += ">Disabled</option>\n        <option value=\"on\" ";
   stack2 = helpers['if'].call(depth0, ((stack1 = depth0.sensor),stack1 == null || stack1 === false ? stack1 : stack1.enabled), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += ">Enabled</option>\n    </select>\n</div>\n<a id=\"reset-button\" data-role=\"button\">Reset</a>\n\n<img id=\"view-sensor-tripped-img\" src=\"";
+  buffer += ">Enabled</option>\n    </select>\n</div>\n<a class=\"reset-button\" data-role=\"button\">Reset</a>\n\n<img class=\"view-sensor-tripped-img\" src=\"";
   stack2 = helpers['if'].call(depth0, ((stack1 = depth0.sensor),stack1 == null || stack1 === false ? stack1 : stack1.enabled), {hash:{},inverse:self.program(8, program8, data),fn:self.program(3, program3, data),data:data});
   if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\" />\n<p id=\"view-sensor-tripped\">";
+  buffer += "\" />\n<p class=\"view-sensor-tripped\">";
   stack2 = helpers['if'].call(depth0, ((stack1 = depth0.sensor),stack1 == null || stack1 === false ? stack1 : stack1.enabled), {hash:{},inverse:self.program(15, program15, data),fn:self.program(10, program10, data),data:data});
   if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "</p>\n\n<div id=\"view-sensor-save-div\">\n    <a id=\"view-sensor-save\" href=\"#\" data-role=\"button\" data-rel=\"back\" data-inline=\"true\">Save</a>\n</div>";
+  buffer += "</p>\n\n<div id=\"view-sensor-save-div\">\n    <a class=\"view-sensor-save\" href=\"#\" data-role=\"button\" data-rel=\"back\" data-inline=\"true\">Save</a>\n</div>";
   return buffer;
   });
 })();
@@ -27445,14 +27447,12 @@ var App = {
         this.oldKey = "";
         this.cacheElements();
         this.bindEvents();
+        this.sensors = [];
         this.fetchSensors();
     },
     cacheElements: function(){
         this.listTemplate = Handlebars.templates.sensor;
         this.viewTemplate = Handlebars.templates.sensorview;
-        this.$viewSensorTrippedText = $('#view-sensor-tripped');
-        this.$viewSensorTrippedImg = $('#view-sensor-tripped-img');
-        this.$viewSensorEnabled = $('#view-sensor-enabled');
         this.$newSensorKey = $('#new-sensor-key');
         this.$newSensorName = $('#new-sensor-name');
         this.$editSensorKey = $('#edit-sensor-key');
@@ -27468,46 +27468,42 @@ var App = {
         this.$page.on('submit','#add-sensor-form', this.submitAdd);
         this.$page.on('submit','#edit-sensor-form', this.submitEdit);
         this.$page.on('vclick', '#delete-sensor-button', this.submitDelete);
-        this.$page.on('vclick', '#view-sensor-save', this.submitSave);
-        this.$page.on('vclick', '#reset-button', this.resetSensor);
-        this.$page.on('slidestop', '#view-sensor-enabled', this.enableDisable);
+        this.$page.on('vclick', '.view-sensor-save', this.submitSave);
+        this.$page.on('vclick', '.reset-button', this.resetSensor);
+        this.$page.on('slidestop', '.view-sensor-enabled', this.enableDisable);
     },
-    storeSensors: function (data) {
-        localStorage.setItem('ss-sensors', JSON.stringify(data));
-        App.refreshSensorList();
-    },
-    loadSensors: function(){
-        var store = localStorage.getItem('ss-sensors');
-        return (store && JSON.parse(store)) || [];
-    },
-    fetchSensors:function(){
+    fetchSensors: function(){
         try{
             $.mobile.loading('show');
-            $.getJSON(App.apiURL+'/sensors.json', App.storeSensors);
-            $.mobile.loading('hide');
+            $.getJSON(App.apiURL+'/sensors.json', function(data){
+                App.sensors = data;
+                App.refreshSensorList();
+                $.mobile.loading('hide');
+            });
         }
         catch(error){
             alert("Couldn't get the sensor list!"+error);
         }
     },
     refreshSensorList: function(){
-        App.$sensorList.empty();
-        App.$sensorList.html(App.listTemplate(App.loadSensors()));
+        App.$sensorList.html(App.listTemplate(App.sensors));
+        App.$sensorList.trigger('create');
         App.$sensorList.listview('refresh');
     },
-    refreshSensorView: function(key){
-        var sensors = this.loadSensors();
-        var sensor = null;
-        $.each(sensors, function (i, sens) {
-            if (sens.sensor.sensor_id == key) {
-                sensor = sens;
-            }
-        });
+    refreshSensorView: function(i,sensor){
         this.$viewWindow.html(this.viewTemplate(sensor)).trigger('create');
     },
     viewSensor: function(){
-        var key = $(this).find('p').text();
-        App.refreshSensorView(key);
+        App.getSensor(this,App.refreshSensorView);
+    },
+    getSensor: function(elem, callback){
+        var id = $(elem).closest('li').data('sensorid');
+        $.each(App.sensors, function (i, sens) {
+            if (sens.sensor.sensor_id == id) {
+                callback.apply(App, arguments);
+                return false;
+            }
+        });
     },
     submitAdd: function(){
         var pushID = "";
@@ -27516,24 +27512,24 @@ var App = {
         try{
             pushID = window.getAPID.getAPID();
         } catch(err){
-            alert("Couldn't get APID!");
-            pushID = " ";
+            console.log("Couldn't get APID!\n"+err);
         }
         $.ajax({
             type: "POST",
             url: App.apiURL+"/sensors/",
             data: {sensor: { name:name, sensor_id:id, enabled:true, tripped:false, client_apid:pushID }}
         }).done(function() {
-                App.$newSensorName.val('');
-                App.$newSensorKey.val('');
-                App.fetchSensors();
-            });
+            App.$newSensorName.val('');
+            App.$newSensorKey.val('');
+            App.fetchSensors();
+        });
     },
     editSensor: function() {
-        var key = $(this).parent().find('p').text();
-        App.$editSensorName.val($(this).parent().find('h3').text());
-        App.$editSensorKey.val(key);
-        App.oldKey = key;
+        App.getSensor(this,function(i,sensor){
+            App.$editSensorName.val(sensor.sensor.name);
+            App.$editSensorKey.val(sensor.sensor.sensor_id);
+            App.oldKey = sensor.sensor.sensor_id;
+        });
     },
     submitEdit: function(){
         $.ajax({
@@ -27541,7 +27537,7 @@ var App = {
             url: App.apiURL+"/sensors/"+App.oldKey,
             data: {sensor: { name:App.$editSensorName.val(), sensor_id:App.$editSensorKey.val() }}
         }).done(function() {
-                App.fetchSensors();
+            App.fetchSensors();
         });
     },
     submitDelete: function(){
@@ -27549,46 +27545,56 @@ var App = {
             type: "DELETE",
             url: App.apiURL+"/sensors/"+App.oldKey
         }).done(function() {
-                App.fetchSensors();
+            App.fetchSensors();
         });
     },
     submitSave: function(){
-        var tripped = App.$viewSensorTrippedText.text() == "TRIPPED";
+        var img = $(this).parent().parent().find('.view-sensor-tripped-img');
+        var tripped = $(this).parent().parent().find('.view-sensor-tripped');
+        var enabled = $(this).parent().parent().find('.view-sensor-enabled');
+        var tripped_bool = tripped.text() == "TRIPPED";
         $.ajax({
             type: "PUT",
             url: App.apiURL+"/sensors/"+$('span.view-sensor-key').text(),
-            data: {sensor: { enabled: App.$viewSensorEnabled.val(), tripped: tripped }}
+            data: {sensor: { enabled: enabled.val(), tripped: tripped_bool }}
         }).done(function(){
                 App.fetchSensors();
         });
     },
     resetSensor: function(){
-        if(App.$viewSensorEnabled.val() == 'on'){
-            App.$viewSensorTrippedImg.attr('src', 'img/check.png');
-            App.$viewSensorTrippedText.text("Ready");
+        var img = $(this).parent().parent().find('.view-sensor-tripped-img');
+        var tripped = $(this).parent().parent().find('.view-sensor-tripped');
+        var enabled = $(this).parent().parent().find('.view-sensor-enabled');
+
+        if(enabled.val() == 'on'){
+            img.attr('src', 'img/check.png');
+            tripped.text("Ready");
         }
         else{
-            App.$viewSensorTrippedImg.attr('src', 'img/disabled.png');
-            App.$viewSensorTrippedText.text("Disabled");
+            img.attr('src', 'img/disabled.png');
+            tripped.text("Disabled");
         }
     },
     enableDisable: function(){
-        if(App.$viewSensorEnabled.val() == 'on'){
-            if(App.$viewSensorTrippedText.text() == "TRIPPED"){
-                App.$viewSensorTrippedImg.attr('src', 'img/danger.png');
-                App.$viewSensorTrippedText.text("TRIPPED");
+        var img = $(this).parent().parent().find('.view-sensor-tripped-img');
+        var tripped = $(this).parent().parent().find('.view-sensor-tripped');
+        var enabled = $(this).parent().parent().find('.view-sensor-enabled');
+
+        if(enabled.val() == 'on'){
+            if(tripped.text() == "TRIPPED"){
+                img.attr('src', 'img/danger.png');
+                tripped.text("TRIPPED");
             }
             else{
-                App.$viewSensorTrippedImg.attr('src', 'img/check.png');
-                App.$viewSensorTrippedText.text("Ready");
+                img.attr('src', 'img/check.png');
+                tripped.text("Ready");
             }
         }
         else {
-            App.$viewSensorTrippedImg.attr('src', 'img/disabled.png');
-            App.$viewSensorTrippedText.text("Disabled");
+            img.attr('src', 'img/disabled.png');
+            tripped.text("Disabled");
         }
     }
-
 };
 
 App.init();

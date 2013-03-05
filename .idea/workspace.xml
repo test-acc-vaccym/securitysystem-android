@@ -26,6 +26,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/www/js/app-ck.js" afterPath="$PROJECT_DIR$/assets/www/js/app-ck.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/www/js/app.js" afterPath="$PROJECT_DIR$/assets/www/js/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/www/codekit-config.json" afterPath="$PROJECT_DIR$/assets/www/codekit-config.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/www/sensor.handlebars" afterPath="$PROJECT_DIR$/assets/www/sensor.handlebars" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/www/js/sensorTemplate.js" afterPath="$PROJECT_DIR$/assets/www/js/sensorTemplate.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/www/js/sensorViewTemplate.js" afterPath="$PROJECT_DIR$/assets/www/js/sensorViewTemplate.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/www/sensorview.handlebars" afterPath="$PROJECT_DIR$/assets/www/sensorview.handlebars" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -33,10 +35,10 @@
     <ignored path="SecuritySystem-Android.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/fragment.java" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1362433624095" ignored="false" />
-    <file path="/index.html" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1362445922475" ignored="false" />
-    <file path="/app.js" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1362452732494" ignored="false" />
+    <file path="/index.html" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1362458334780" ignored="false" />
+    <file path="/app.js" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1362459351874" ignored="false" />
     <file path="/sensorlist.html" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359760884277" ignored="false" />
-    <file path="/Dummy.txt" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1362449742769" ignored="false" />
+    <file path="/Dummy.txt" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1362453424925" ignored="false" />
     <file path="/IntentReceiver.java" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359822305458" ignored="false" />
     <file path="/PushNotificationPlugin.java" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1360192646480" ignored="false" />
     <file path="/SecuritySystem.java" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1360207788963" ignored="false" />
@@ -50,9 +52,9 @@
     <file path="/getAPID.java" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1360207713708" ignored="false" />
     <file path="/README" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1360208614265" ignored="false" />
     <file path="/custom.css" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1360517976935" ignored="false" />
-    <file path="/sensor.handlebars" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1362443022589" ignored="false" />
+    <file path="/sensor.handlebars" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1362455333066" ignored="false" />
     <file path="/sensor-view.handlebars" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1362445053121" ignored="false" />
-    <file path="/sensorview.handlebars" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1362452655215" ignored="false" />
+    <file path="/sensorview.handlebars" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1362458240626" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +116,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="45" selection-start="3380" selection-end="3380" vertical-scroll-proportion="-19.333334">
+            <state line="52" column="31" selection-start="3366" selection-end="3366" vertical-scroll-proportion="-16.518518">
               <folding />
             </state>
           </provider>
@@ -123,7 +125,7 @@
       <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/www/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="122" column="69" selection-start="4547" selection-end="4547" vertical-scroll-proportion="2.0193424">
+            <state line="143" column="6" selection-start="5303" selection-end="5303" vertical-scroll-proportion="0.38297874">
               <folding />
             </state>
           </provider>
@@ -132,7 +134,7 @@
       <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/Desktop/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="105" column="36" selection-start="3058" selection-end="3190" vertical-scroll-proportion="0.0">
+            <state line="138" column="34" selection-start="3923" selection-end="3923" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -172,10 +174,10 @@
         <option value="$PROJECT_DIR$/README" />
         <option value="$PROJECT_DIR$/assets/www/css/custom.css" />
         <option value="$PROJECT_DIR$/assets/www/res/sensor.handlebars" />
-        <option value="$PROJECT_DIR$/assets/www/sensor.handlebars" />
         <option value="$PROJECT_DIR$/assets/www/sensor-view.handlebars" />
-        <option value="$PROJECT_DIR$/assets/www/index.html" />
+        <option value="$PROJECT_DIR$/assets/www/sensor.handlebars" />
         <option value="$PROJECT_DIR$/assets/www/sensorview.handlebars" />
+        <option value="$PROJECT_DIR$/assets/www/index.html" />
         <option value="$PROJECT_DIR$/assets/www/js/app.js" />
       </list>
     </option>
@@ -648,7 +650,11 @@
       <created>1362449745556</created>
       <updated>1362449745556</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="still needs a LOT of work">
+      <created>1362453429374</created>
+      <updated>1362453429374</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -724,7 +730,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix codekit settings for upcoming demo" />
+    <option name="LAST_COMMIT_MESSAGE" value="still needs a LOT of work" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -753,6 +759,7 @@
     <MESSAGE value="use precompiled handlebars template for rendering sensors" />
     <MESSAGE value="begin refactor process" />
     <MESSAGE value="fix codekit settings for upcoming demo" />
+    <MESSAGE value="still needs a LOT of work" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -817,35 +824,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/sensor.handlebars">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="139" selection-start="151" selection-end="268" vertical-scroll-proportion="0.073569484">
+        <state line="1" column="43" selection-start="53" selection-end="53" vertical-scroll-proportion="0.024523161">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Desktop/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="36" selection-start="3058" selection-end="3190" vertical-scroll-proportion="0.0">
+        <state line="138" column="34" selection-start="3923" selection-end="3923" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="45" selection-start="3380" selection-end="3380" vertical-scroll-proportion="-19.333334">
+        <state line="52" column="31" selection-start="3366" selection-end="3366" vertical-scroll-proportion="-16.518518">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/sensorview.handlebars">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="19" selection-start="73" selection-end="73" vertical-scroll-proportion="0.049046323">
+        <state line="17" column="31" selection-start="952" selection-end="952" vertical-scroll-proportion="0.41689372">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="122" column="69" selection-start="4547" selection-end="4547" vertical-scroll-proportion="2.0193424">
+        <state line="143" column="6" selection-start="5303" selection-end="5303" vertical-scroll-proportion="0.38297874">
           <folding />
         </state>
       </provider>

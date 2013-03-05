@@ -3,16 +3,16 @@
 <p>Key: <span class="view-sensor-key">{{sensor.sensor_id}}</span></p>
 
 <div class="enabled-slider">
-    <select name="flip-min" id="view-sensor-enabled" data-role="slider" data-theme="a" data-track-theme="a">
+    <select name="flip-min" class="view-sensor-enabled" data-role="slider" data-theme="a" data-track-theme="a">
         <option value="off" {{#unless sensor.enabled}}selected{{/unless}}>Disabled</option>
         <option value="on" {{#if sensor.enabled}}selected{{/if}}>Enabled</option>
     </select>
 </div>
-<a id="reset-button" data-role="button">Reset</a>
+<a class="reset-button" data-role="button">Reset</a>
 
-<img id="view-sensor-tripped-img" src="{{#if sensor.enabled}}{{#if sensor.tripped}}img/danger.png{{else}}img/check.png{{/if}}{{else}}img/disabled.png{{/if}}" />
-<p id="view-sensor-tripped">{{#if sensor.enabled}}{{#if sensor.tripped}}TRIPPED{{else}}Ready{{/if}}{{else}}Disabled{{/if}}</p>
+<img class="view-sensor-tripped-img" src="{{#if sensor.enabled}}{{#if sensor.tripped}}img/danger.png{{else}}img/check.png{{/if}}{{else}}img/disabled.png{{/if}}" />
+<p class="view-sensor-tripped">{{#if sensor.enabled}}{{#if sensor.tripped}}TRIPPED{{else}}Ready{{/if}}{{else}}Disabled{{/if}}</p>
 
 <div id="view-sensor-save-div">
-    <a id="view-sensor-save" href="#" data-role="button" data-rel="back" data-inline="true">Save</a>
+    <a class="view-sensor-save" href="#" data-role="button" data-rel="back" data-inline="true">Save</a>
 </div>
