@@ -13,16 +13,16 @@
       "outputAbbreviatedPath" : "\/js\/jquery-1.9.0-ck.js",
       "fileType" : 64
     },
-    "\/js\/jquery.mobile-1.3.0-rc.1.js" : {
+    "\/css\/images\/icons-18-white.png" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
+      "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/jquery.mobile-1.3.0-rc.1.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/js\/jquery.mobile-1.3.0-rc.1-ck.js",
-      "fileType" : 64
+      "inputAbbreviatedPath" : "\/css\/images\/icons-18-white.png",
+      "processed" : 1,
+      "outputAbbreviatedPath" : "\/css\/images\/icons-18-white.png",
+      "initialSize" : 58717,
+      "fileType" : 8192
     },
     "\/js\/sensorTemplate.js" : {
       "ignoreWasSetByUser" : 0,
@@ -46,6 +46,28 @@
       "outputAbbreviatedPath" : "\/js\/PushNotification-ck.js",
       "fileType" : 64
     },
+    "\/js\/jquery.mobile-1.3.0-rc.1.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/js\/jquery.mobile-1.3.0-rc.1.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/js\/jquery.mobile-1.3.0-rc.1-ck.js",
+      "fileType" : 64
+    },
+    "\/res\/screen\/ios\/screen-ipad-portrait-2x.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/res\/screen\/ios\/screen-ipad-portrait-2x.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/res\/screen\/ios\/screen-ipad-portrait-2x.png",
+      "initialSize" : 1610434,
+      "fileType" : 8192
+    },
     "\/res\/screen\/ios\/screen-ipad-landscape-2x.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -56,6 +78,17 @@
       "outputAbbreviatedPath" : "\/res\/screen\/ios\/screen-ipad-landscape-2x.png",
       "initialSize" : 1534088,
       "fileType" : 8192
+    },
+    "\/spec\/index.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/spec\/index.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/spec\/index-ck.js",
+      "fileType" : 64
     },
     "\/css\/images\/icons-36-white.png" : {
       "ignoreWasSetByUser" : 0,
@@ -78,39 +111,6 @@
       "syntaxCheckerStyle" : 0,
       "outputAbbreviatedPath" : "\/spec\/lib\/jasmine-1.2.0\/jasmine-ck.js",
       "fileType" : 64
-    },
-    "\/spec\/index.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/spec\/index.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/spec\/index-ck.js",
-      "fileType" : 64
-    },
-    "\/res\/screen\/ios\/screen-ipad-portrait-2x.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/res\/screen\/ios\/screen-ipad-portrait-2x.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/res\/screen\/ios\/screen-ipad-portrait-2x.png",
-      "initialSize" : 1610434,
-      "fileType" : 8192
-    },
-    "\/css\/images\/icons-18-white.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/images\/icons-18-white.png",
-      "processed" : 1,
-      "outputAbbreviatedPath" : "\/css\/images\/icons-18-white.png",
-      "initialSize" : 58717,
-      "fileType" : 8192
     },
     "\/res\/icon\/ios\/icon-57.png" : {
       "ignoreWasSetByUser" : 0,
@@ -302,6 +302,17 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
+    "\/css\/images\/icons-36-black.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/css\/images\/icons-36-black.png",
+      "processed" : 1,
+      "outputAbbreviatedPath" : "\/css\/images\/icons-36-black.png",
+      "initialSize" : 3611,
+      "fileType" : 8192
+    },
     "\/res\/icon\/ios\/icon-72.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -355,17 +366,6 @@
       "processed" : 1,
       "outputAbbreviatedPath" : "\/img\/check.png",
       "initialSize" : 17920,
-      "fileType" : 8192
-    },
-    "\/css\/images\/icons-36-black.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/images\/icons-36-black.png",
-      "processed" : 1,
-      "outputAbbreviatedPath" : "\/css\/images\/icons-36-black.png",
-      "initialSize" : 3611,
       "fileType" : 8192
     },
     "\/js\/handlebars.runtime.js" : {

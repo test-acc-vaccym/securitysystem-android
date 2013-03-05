@@ -19,28 +19,30 @@ var App = {
     cacheElements: function(){
         this.listTemplate = Handlebars.templates.sensor;
         this.viewTemplate = Handlebars.templates.sensorview;
+        this.$listPage = $('div#sensorpage');
+        this.$addPage = $('div#add');
+        this.$editPage = $('div#edit');
         this.$newSensorKey = $('#new-sensor-key');
         this.$newSensorName = $('#new-sensor-name');
         this.$editSensorKey = $('#edit-sensor-key');
         this.$editSensorName = $('#edit-sensor-name');
         this.$sensorList = $('#sensorlist');
         this.$viewWindow = $('#inner-view');
-        this.$page = $('#sensorpage');
     },
     bindEvents: function(){
         this.$sensorList.on('click', '.view-button', this.viewSensor);
         this.$sensorList.on('click', '.edit-gear', this.editSensor);
-        this.$page.on('click','#refresh-button', this.fetchSensors);
-        this.$page.on('submit','#add-sensor-form', this.submitAdd);
-        this.$page.on('submit','#edit-sensor-form', this.submitEdit);
-        this.$page.on('click', '#delete-sensor-button', this.submitDelete);
-        this.$page.on('click', '.view-sensor-save', this.submitSave);
-        this.$page.on('click', '.reset-button', this.resetSensor);
-        this.$page.on('slidestop', '.view-sensor-enabled', this.enableDisable);
-        this.$page.on('pageshow', 'div#sensorpage', this.pageShow);
+        this.$listPage.on('click','#refresh-button', this.fetchSensors);
+        this.$addPage.on('click','input#add-button', this.submitAdd);
+        this.$editPage.on('click','input#submit-button', this.submitEdit);
+        this.$editPage.on('click', '#delete-sensor-button', this.submitDelete);
+        this.$listPage.on('click', '.view-sensor-save', this.submitSave);
+        this.$listPage.on('click', '.reset-button', this.resetSensor);
+        this.$listPage.on('slidestop', '.view-sensor-enabled', this.enableDisable);
+        this.$listPage.on('pageshow', this.pageShow);
     },
     pageShow: function(){
-        alert("loaded");
+        App.fetchSensors();
     },
     fetchSensors: function(){
         try{
@@ -78,7 +80,8 @@ var App = {
             }
         });
     },
-    submitAdd: function(){
+    submitAdd: function(event){
+        event.preventDefault();
         var pushID = "";
         var name = App.$newSensorName.val();
         var id = App.$newSensorKey.val();
@@ -94,6 +97,7 @@ var App = {
         }).done(function() {
             App.$newSensorName.val('');
             App.$newSensorKey.val('');
+            window.history.back();
             App.fetchSensors();
         });
     },
@@ -104,14 +108,16 @@ var App = {
             App.oldKey = sensor.sensor.sensor_id;
         });
     },
-    submitEdit: function(){
+    submitEdit: function(event){
+        event.preventDefault();
         $.ajax({
             type: "PUT",
             url: App.apiURL+"/sensors/"+App.oldKey,
             data: {sensor: { name:App.$editSensorName.val(), sensor_id:App.$editSensorKey.val() }}
-        }).done(function() {
-            App.fetchSensors();
-        });
+        }).done(function(){
+                window.history.back();
+                App.fetchSensors();
+            });
     },
     submitDelete: function(){
         $.ajax({
@@ -121,7 +127,7 @@ var App = {
             App.fetchSensors();
         });
     },
-    submitSave: function(){
+    submitSave: function(event){
         var img = $(this).parent().parent().find('.view-sensor-tripped-img');
         var tripped = $(this).parent().parent().find('.view-sensor-tripped');
         var enabled = $(this).parent().parent().find('.view-sensor-enabled');

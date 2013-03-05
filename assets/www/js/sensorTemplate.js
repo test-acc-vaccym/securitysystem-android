@@ -17,7 +17,7 @@ function program1(depth0,data) {
     + escapeExpression(((stack1 = ((stack1 = depth0.sensor),stack1 == null || stack1 === false ? stack1 : stack1.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "</h3>\n            <p>"
     + escapeExpression(((stack1 = ((stack1 = depth0.sensor),stack1 == null || stack1 === false ? stack1 : stack1.sensor_id)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</p>\n        </a>\n        <a class=\"edit-gear\" href=\"#edit\" data-rel=\"popup\" data-transition=\"pop\" data-position-to=\"window\"></a>\n    </li>\n";
+    + "</p>\n        </a>\n        <a class=\"edit-gear\" href=\"#edit\" data-transition=\"slide\"></a>\n    </li>\n";
   return buffer;
   }
 function program2(depth0,data) {
