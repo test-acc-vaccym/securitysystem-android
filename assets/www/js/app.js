@@ -36,6 +36,7 @@ var App = {
         this.$page.on('vclick', '.view-sensor-save', this.submitSave);
         this.$page.on('vclick', '.reset-button', this.resetSensor);
         this.$page.on('slidestop', '.view-sensor-enabled', this.enableDisable);
+        this.$page.on('pagebeforeshow', '#sensorpage', this.fetchSensors);
     },
     fetchSensors: function(){
         try{
