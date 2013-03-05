@@ -2,17 +2,6 @@
   "CodeKitInfo" : "This is a CodeKit project configuration file. It is designed to sync project settings across multiple machines. Modifying the contents of this file can be a poor life decision if you don't know what you're doing. This file is not useful unless accompanied by the project that created it in CodeKit. For more information, see: http:\/\/incident57.com\/codekit",
   "creatorBuild" : "8248",
   "files" : {
-    "\/js\/sensor-template.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/sensor-template.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/js\/sensor-template-ck.js",
-      "fileType" : 64
-    },
     "\/js\/jquery-1.9.0.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -35,70 +24,15 @@
       "initialSize" : 58717,
       "fileType" : 8192
     },
-    "\/res\/screen\/ios\/screen-ipad-portrait-2x.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/res\/screen\/ios\/screen-ipad-portrait-2x.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/res\/screen\/ios\/screen-ipad-portrait-2x.png",
-      "initialSize" : 1610434,
-      "fileType" : 8192
-    },
-    "\/js\/PushNotification.js" : {
+    "\/js\/sensorTemplate.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/PushNotification.js",
+      "inputAbbreviatedPath" : "\/js\/sensorTemplate.js",
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/js\/PushNotification-ck.js",
-      "fileType" : 64
-    },
-    "\/res\/screen\/ios\/screen-ipad-landscape-2x.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/res\/screen\/ios\/screen-ipad-landscape-2x.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/res\/screen\/ios\/screen-ipad-landscape-2x.png",
-      "initialSize" : 1534088,
-      "fileType" : 8192
-    },
-    "\/css\/images\/icons-36-white.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/images\/icons-36-white.png",
-      "processed" : 1,
-      "outputAbbreviatedPath" : "\/css\/images\/icons-36-white.png",
-      "initialSize" : 66763,
-      "fileType" : 8192
-    },
-    "\/spec\/lib\/jasmine-1.2.0\/jasmine.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/spec\/lib\/jasmine-1.2.0\/jasmine.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/spec\/lib\/jasmine-1.2.0\/jasmine-ck.js",
-      "fileType" : 64
-    },
-    "\/spec\/index.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/spec\/index.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/spec\/index-ck.js",
+      "outputAbbreviatedPath" : "\/js\/sensorTemplate-ck.js",
       "fileType" : 64
     },
     "\/js\/jquery.mobile-1.3.0-rc.1.js" : {
@@ -112,6 +46,72 @@
       "outputAbbreviatedPath" : "\/js\/jquery.mobile-1.3.0-rc.1-ck.js",
       "fileType" : 64
     },
+    "\/res\/screen\/ios\/screen-ipad-portrait-2x.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/res\/screen\/ios\/screen-ipad-portrait-2x.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/res\/screen\/ios\/screen-ipad-portrait-2x.png",
+      "initialSize" : 1610434,
+      "fileType" : 8192
+    },
+    "\/css\/images\/icons-36-white.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/css\/images\/icons-36-white.png",
+      "processed" : 1,
+      "outputAbbreviatedPath" : "\/css\/images\/icons-36-white.png",
+      "initialSize" : 66763,
+      "fileType" : 8192
+    },
+    "\/res\/screen\/ios\/screen-ipad-landscape-2x.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/res\/screen\/ios\/screen-ipad-landscape-2x.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/res\/screen\/ios\/screen-ipad-landscape-2x.png",
+      "initialSize" : 1534088,
+      "fileType" : 8192
+    },
+    "\/spec\/index.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/spec\/index.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/spec\/index-ck.js",
+      "fileType" : 64
+    },
+    "\/spec\/lib\/jasmine-1.2.0\/jasmine.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/spec\/lib\/jasmine-1.2.0\/jasmine.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/spec\/lib\/jasmine-1.2.0\/jasmine-ck.js",
+      "fileType" : 64
+    },
+    "\/js\/PushNotification.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/js\/PushNotification.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/js\/PushNotification-ck.js",
+      "fileType" : 64
+    },
     "\/res\/icon\/ios\/icon-57.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -122,6 +122,17 @@
       "outputAbbreviatedPath" : "\/res\/icon\/ios\/icon-57.png",
       "initialSize" : 3908,
       "fileType" : 8192
+    },
+    "\/js\/sensorViewTemplate.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/js\/sensorViewTemplate.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/js\/sensorViewTemplate-ck.js",
+      "fileType" : 64
     },
     "\/spec\/lib\/jasmine-1.2.0\/jasmine-html.js" : {
       "ignoreWasSetByUser" : 0,
@@ -280,15 +291,15 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/css\/images\/icons-36-black.png" : {
+    "\/img\/logo.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/images\/icons-36-black.png",
+      "inputAbbreviatedPath" : "\/img\/logo.png",
       "processed" : 1,
-      "outputAbbreviatedPath" : "\/css\/images\/icons-36-black.png",
-      "initialSize" : 3611,
+      "outputAbbreviatedPath" : "\/img\/logo.png",
+      "initialSize" : 21814,
       "fileType" : 8192
     },
     "\/res\/icon\/ios\/icon-72.png" : {
@@ -313,17 +324,6 @@
       "initialSize" : 22258,
       "fileType" : 8192
     },
-    "\/img\/logo.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/logo.png",
-      "processed" : 1,
-      "outputAbbreviatedPath" : "\/img\/logo.png",
-      "initialSize" : 21814,
-      "fileType" : 8192
-    },
     "\/js\/app.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -344,6 +344,17 @@
       "processed" : 1,
       "outputAbbreviatedPath" : "\/img\/check.png",
       "initialSize" : 17920,
+      "fileType" : 8192
+    },
+    "\/css\/images\/icons-36-black.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/css\/images\/icons-36-black.png",
+      "processed" : 1,
+      "outputAbbreviatedPath" : "\/css\/images\/icons-36-black.png",
+      "initialSize" : 3611,
       "fileType" : 8192
     },
     "\/js\/handlebars.runtime.js" : {
@@ -404,42 +415,49 @@
     {
       "type" : 0,
       "position" : 0,
-      "linkedFileAbbreviatedPath" : "\/js\/jquery-1.9.0.js",
-      "baseFileAbbreviatedPath" : "\/js\/app.js",
-      "followForSyntaxChecking" : 1
-    },
-    {
-      "type" : 0,
-      "position" : 1,
-      "linkedFileAbbreviatedPath" : "\/js\/jquery.mobile-1.3.0-rc.1.js",
-      "baseFileAbbreviatedPath" : "\/js\/app.js",
-      "followForSyntaxChecking" : 1
-    },
-    {
-      "type" : 0,
-      "position" : 2,
       "linkedFileAbbreviatedPath" : "\/cordova-2.3.0.js",
       "baseFileAbbreviatedPath" : "\/js\/app.js",
       "followForSyntaxChecking" : 1
     },
     {
       "type" : 0,
-      "position" : 3,
-      "linkedFileAbbreviatedPath" : "\/js\/PushNotification.js",
-      "baseFileAbbreviatedPath" : "\/js\/app.js",
-      "followForSyntaxChecking" : 1
-    },
-    {
-      "type" : 0,
-      "position" : 4,
+      "position" : 1,
       "linkedFileAbbreviatedPath" : "\/js\/handlebars.runtime.js",
       "baseFileAbbreviatedPath" : "\/js\/app.js",
       "followForSyntaxChecking" : 1
     },
     {
       "type" : 0,
+      "position" : 2,
+      "linkedFileAbbreviatedPath" : "\/js\/jquery-1.9.0.js",
+      "baseFileAbbreviatedPath" : "\/js\/app.js",
+      "followForSyntaxChecking" : 1
+    },
+    {
+      "type" : 0,
+      "position" : 3,
+      "linkedFileAbbreviatedPath" : "\/js\/jquery.mobile-1.3.0-rc.1.js",
+      "baseFileAbbreviatedPath" : "\/js\/app.js",
+      "followForSyntaxChecking" : 1
+    },
+    {
+      "type" : 0,
+      "position" : 4,
+      "linkedFileAbbreviatedPath" : "\/js\/PushNotification.js",
+      "baseFileAbbreviatedPath" : "\/js\/app.js",
+      "followForSyntaxChecking" : 1
+    },
+    {
+      "type" : 0,
       "position" : 5,
-      "linkedFileAbbreviatedPath" : "\/js\/sensor-template.js",
+      "linkedFileAbbreviatedPath" : "\/js\/sensorTemplate.js",
+      "baseFileAbbreviatedPath" : "\/js\/app.js",
+      "followForSyntaxChecking" : 1
+    },
+    {
+      "type" : 0,
+      "position" : 6,
+      "linkedFileAbbreviatedPath" : "\/js\/sensorViewTemplate.js",
       "baseFileAbbreviatedPath" : "\/js\/app.js",
       "followForSyntaxChecking" : 1
     }

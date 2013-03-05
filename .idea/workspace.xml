@@ -23,22 +23,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60f71126-09f0-4df1-9b69-32d12aad38bd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/www/js/handlebars.runtime.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/www/js/sensor-template.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/www/sensor.handlebars" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/www/js/sensorViewTemplate.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/www/sensorview.handlebars" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/www/js/sensor-template.js" afterPath="$PROJECT_DIR$/assets/www/js/sensorTemplate.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/www/js/app-ck.js" afterPath="$PROJECT_DIR$/assets/www/js/app-ck.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/www/js/app.js" afterPath="$PROJECT_DIR$/assets/www/js/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/www/codekit-config.json" afterPath="$PROJECT_DIR$/assets/www/codekit-config.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLinters/jshint.xml" afterPath="$PROJECT_DIR$/.idea/jsLinters/jshint.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/www/index.html" afterPath="$PROJECT_DIR$/assets/www/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SecuritySystem-Android.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/fragment.java" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1362433624095" ignored="false" />
-    <file path="/index.html" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1360518105648" ignored="false" />
-    <file path="/app.js" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1362442280084" ignored="false" />
+    <file path="/index.html" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1362445922475" ignored="false" />
+    <file path="/app.js" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1362449376108" ignored="false" />
     <file path="/sensorlist.html" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359760884277" ignored="false" />
-    <file path="/Dummy.txt" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1362440929684" ignored="false" />
+    <file path="/Dummy.txt" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1362443277932" ignored="false" />
     <file path="/IntentReceiver.java" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359822305458" ignored="false" />
     <file path="/PushNotificationPlugin.java" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1360192646480" ignored="false" />
     <file path="/SecuritySystem.java" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1360207788963" ignored="false" />
@@ -53,6 +53,7 @@
     <file path="/README" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1360208614265" ignored="false" />
     <file path="/custom.css" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1360517976935" ignored="false" />
     <file path="/sensor.handlebars" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1362443022589" ignored="false" />
+    <file path="/sensor-view.handlebars" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1362445053121" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +115,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="69" selection-start="3991" selection-end="3991" vertical-scroll-proportion="-11.925926">
+            <state line="52" column="45" selection-start="3380" selection-end="3380" vertical-scroll-proportion="-31.333334">
               <folding />
             </state>
           </provider>
@@ -123,7 +124,16 @@
       <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/www/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="164" column="42" selection-start="5178" selection-end="5178" vertical-scroll-proportion="0.72200775">
+            <state line="18" column="67" selection-start="634" selection-end="634" vertical-scroll-proportion="0.6266925">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Desktop/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="22" selection-start="31" selection-end="52" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -138,6 +148,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="GitLogSettings">
     <option name="myDateState">
@@ -147,8 +162,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/assets/location.properties" />
-        <option value="$PROJECT_DIR$/assets/www/js/PushNotification.js" />
         <option value="$PROJECT_DIR$/src/com/Osu/SecuritySystem/IntentReceiver.java" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/com/Osu/SecuritySystem/PushNotificationPlugin.java" />
@@ -159,9 +172,11 @@
         <option value="$PROJECT_DIR$/src/com/Osu/SecuritySystem/SecuritySystem.java" />
         <option value="$PROJECT_DIR$/README" />
         <option value="$PROJECT_DIR$/assets/www/css/custom.css" />
-        <option value="$PROJECT_DIR$/assets/www/index.html" />
         <option value="$PROJECT_DIR$/assets/www/res/sensor.handlebars" />
         <option value="$PROJECT_DIR$/assets/www/sensor.handlebars" />
+        <option value="$PROJECT_DIR$/assets/www/sensor-view.handlebars" />
+        <option value="$PROJECT_DIR$/assets/www/sensorview.handlebars" />
+        <option value="$PROJECT_DIR$/assets/www/index.html" />
         <option value="$PROJECT_DIR$/assets/www/js/app.js" />
       </list>
     </option>
@@ -299,51 +314,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SecuritySystem-Android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SecuritySystem-Android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SecuritySystem-Android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SecuritySystem-Android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -408,6 +379,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/www" />
       <recent name="$PROJECT_DIR$/assets/www/css/images" />
       <recent name="$PROJECT_DIR$/assets/www/css" />
       <recent name="$PROJECT_DIR$/assets/www/js" />
@@ -665,26 +637,31 @@
       <created>1362436832833</created>
       <updated>1362436832833</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="use precompiled handlebars template for rendering sensors">
+      <created>1362443285242</created>
+      <updated>1362443285242</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32089552" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32044888" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39800996" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.56234413" sideWeight="0.5035868" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917705" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32711443" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.563591" sideWeight="0.4913917" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21664275" sideWeight="0.6791045" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21664275" sideWeight="0.6795511" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31421447" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Regex" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -697,7 +674,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Heroku" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917705" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32711443" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -741,7 +717,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix wording, get ready for an overhaul" />
+    <option name="LAST_COMMIT_MESSAGE" value="use precompiled handlebars template for rendering sensors" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -767,6 +743,7 @@
     <MESSAGE value="add enable/disable functionality, speed tweaks" />
     <MESSAGE value="little tweak to enable/disable functionality" />
     <MESSAGE value="fix wording, get ready for an overhaul" />
+    <MESSAGE value="use precompiled handlebars template for rendering sensors" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -778,25 +755,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/www/css/custom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="0" selection-start="669" selection-end="669" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="97" selection-start="2657" selection-end="2657" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="59" selection-start="1260" selection-end="1260" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="44" selection-start="112" selection-end="112" vertical-scroll-proportion="0.046511628" />
@@ -848,30 +806,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/sensor-template.js">
+    <entry file="file://$PROJECT_DIR$/assets/www/sensor.handlebars">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="22" selection-start="460" selection-end="460" vertical-scroll-proportion="0.14154653">
+        <state line="3" column="139" selection-start="151" selection-end="268" vertical-scroll-proportion="0.073569484">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/sensorTemplate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="22" selection-start="460" selection-end="460" vertical-scroll-proportion="0.14191853">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/sensorViewTemplate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.0814718">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/sensorview.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="6" selection-start="900" selection-end="900" vertical-scroll-proportion="0.41689372">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="22" selection-start="31" selection-end="52" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="69" selection-start="3991" selection-end="3991" vertical-scroll-proportion="-11.925926">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/sensor.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="24" selection-start="333" selection-end="333" vertical-scroll-proportion="0.12228261">
+        <state line="52" column="45" selection-start="3380" selection-end="3380" vertical-scroll-proportion="-31.333334">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="164" column="42" selection-start="5178" selection-end="5178" vertical-scroll-proportion="0.72200775">
+        <state line="18" column="67" selection-start="634" selection-end="634" vertical-scroll-proportion="0.6266925">
           <folding />
         </state>
       </provider>
