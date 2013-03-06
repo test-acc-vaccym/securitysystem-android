@@ -4,7 +4,12 @@ $(document).on("mobileinit", function () {
     $.mobile.defaultPageTransition = 'none';
     $.mobile.defaultDialogTransition = 'none';
     $.mobile.buttonMarkup.hoverDelay = 0;
+    $.mobile.useFastClick = true;
 });
+
+window.addEventListener('load', function() {
+    new FastClick(document.body);
+}, false);
 
 jQuery(function ($) {
 var App = {
@@ -90,15 +95,16 @@ var App = {
         } catch(err){
             console.log("Couldn't get APID!\n"+err);
         }
+        $.mobile.loading('show');
         $.ajax({
             type: "POST",
             url: App.apiURL+"/sensors/",
             data: {sensor: { name:name, sensor_id:id, enabled:true, tripped:false, client_apid:pushID }}
         }).done(function() {
+            $.mobile.loading('hide');
             App.$newSensorName.val('');
             App.$newSensorKey.val('');
             window.history.back();
-            App.fetchSensors();
         });
     },
     editSensor: function() {
@@ -116,15 +122,12 @@ var App = {
             data: {sensor: { name:App.$editSensorName.val(), sensor_id:App.$editSensorKey.val() }}
         }).done(function(){
                 window.history.back();
-                App.fetchSensors();
             });
     },
     submitDelete: function(){
         $.ajax({
             type: "DELETE",
             url: App.apiURL+"/sensors/"+App.oldKey
-        }).done(function() {
-            App.fetchSensors();
         });
     },
     submitSave: function(event){
