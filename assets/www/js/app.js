@@ -1,12 +1,3 @@
-//set some defaults before the app loads
-$(document).on("mobileinit", function () {
-    $.mobile.pageContainer = $('#container');
-    $.mobile.defaultPageTransition = 'none';
-    $.mobile.defaultDialogTransition = 'none';
-    $.mobile.buttonMarkup.hoverDelay = 0;
-    $.mobile.useFastClick = true;
-});
-
 window.addEventListener('load', function() {
     new FastClick(document.body);
 }, false);
@@ -14,7 +5,7 @@ window.addEventListener('load', function() {
 jQuery(function ($) {
 var App = {
     init: function(){
-        this.apiURL = 'http://securitysystem.herokuapp.com';
+        this.apiURL = 'https://securitysystem.herokuapp.com';
         this.oldKey = "";
         this.sensors = [];
         this.cacheElements();

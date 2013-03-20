@@ -6,40 +6,59 @@
 #view-sensor-save-div { text-align: center }
 
 
-
-.ui-shadow,
+/* disable shadows for better android performance */
+.ui-body-a,
+.ui-bar-a,
 .ui-btn-up-a,
 .ui-btn-hover-a,
 .ui-btn-down-a,
+
 .ui-body-b,
+.ui-bar-b,
 .ui-btn-up-b,
 .ui-btn-hover-b,
 .ui-btn-down-b,
-.ui-bar-c,
+
 .ui-body-c,
+.ui-bar-c,
 .ui-btn-up-c,
 .ui-btn-hover-c,
 .ui-btn-down-c,
-.ui-bar-c,
+
 .ui-body-d,
+.ui-bar-d,
 .ui-btn-up-d,
 .ui-btn-hover-d,
 .ui-btn-down-d,
-.ui-bar-d,
+
 .ui-body-e,
+.ui-bar-e,
 .ui-btn-up-e,
 .ui-btn-hover-e,
 .ui-btn-down-e,
-.ui-bar-e,
+
+.ui-shadow-inset,
+.ui-icon-shadow,
+.ui-focus,
 .ui-overlay-shadow,
 .ui-shadow,
 .ui-btn-active,
-.ui-body-a,
-.ui-bar-a {
-    text-shadow: none;
-    box-shadow: none;
-    -webkit-box-shadow: none;
+{
+    text-shadow: none !important;
+    box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
 }
+
+.ui-btn-up-a,
+.ui-btn-hover-a,
+.ui-btn-up-b,
+.ui-btn-hover-b,
+.ui-bar-a,
+.ui-body-a{
+    background-image: none !important;
+}
+
 
 body {
     margin: 0;
@@ -50,10 +69,3 @@ body {
     width: 100%;
     height: 100%;
 }
-
-/*.form-buttons{*/
-    /*width: 75%;*/
-    /*margin-left: auto;*/
-    /*margin-right: auto;*/
-    /*margin-top: 1em;*/
-/*}*/
