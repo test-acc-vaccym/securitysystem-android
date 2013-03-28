@@ -78,13 +78,14 @@ var App = {
     },
     submitAdd: function(event){
         event.preventDefault();
-        var pushID = "";
         var name = App.$newSensorName.val();
         var id = App.$newSensorKey.val();
+        var pushID = "";
         try{
-            pushID = window.getAPID.getAPID();
+            pushID = window.apid.getDeviceAPID();
         } catch(err){
             console.log("Couldn't get APID!\n"+err);
+            pushID = "4597591c-e2de-4781-903c-08f7f2f78981";
         }
         $.mobile.loading('show');
         $.ajax({

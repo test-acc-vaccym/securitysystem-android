@@ -19,22 +19,28 @@
     </filters>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="apid" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="All but buggy shit" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60f71126-09f0-4df1-9b69-32d12aad38bd" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/Osu/SecuritySystem/SecuritySystem.java" afterPath="$PROJECT_DIR$/src/com/Osu/SecuritySystem/SecuritySystem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/www/js/app-ck.js" afterPath="$PROJECT_DIR$/assets/www/js/app-ck.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/www/js/app.js" afterPath="$PROJECT_DIR$/assets/www/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/www/codekit-config.json" afterPath="$PROJECT_DIR$/assets/www/codekit-config.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/Osu/SecuritySystem/getAPID.java" afterPath="$PROJECT_DIR$/src/com/Osu/SecuritySystem/getAPID.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SecuritySystem-Android.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/fragment.java" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1362433624095" ignored="false" />
     <file path="/index.html" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1363816727484" ignored="false" />
-    <file path="/app.js" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1362541370647" ignored="false" />
+    <file path="/app.js" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1364503935008" ignored="false" />
     <file path="/sensorlist.html" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359760884277" ignored="false" />
-    <file path="/Dummy.txt" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1363817575427" ignored="false" />
+    <file path="/Dummy.txt" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1364500605897" ignored="false" />
     <file path="/IntentReceiver.java" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359822305458" ignored="false" />
     <file path="/PushNotificationPlugin.java" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1360192646480" ignored="false" />
-    <file path="/SecuritySystem.java" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1360207788963" ignored="false" />
+    <file path="/SecuritySystem.java" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1364502575448" ignored="false" />
     <file path="/UAirshipInit.java" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359778305302" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359822684198" ignored="false" />
     <file path="/PushNotification.js" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1359782131937" ignored="false" />
@@ -42,7 +48,7 @@
     <file path="/MainApplication.java" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1360204493118" ignored="false" />
     <file path="/SendAPID.java" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1360205064614" ignored="false" />
     <file path="/config.xml" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1363814404777" ignored="false" />
-    <file path="/getAPID.java" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1360207713708" ignored="false" />
+    <file path="/getAPID.java" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1364501467718" ignored="false" />
     <file path="/README" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1360208614265" ignored="false" />
     <file path="/custom.css" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1363813515361" ignored="false" />
     <file path="/sensor.handlebars" changelist="60f71126-09f0-4df1-9b69-32d12aad38bd" time="1362521549504" ignored="false" />
@@ -64,7 +70,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -99,6 +104,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -111,7 +117,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="84" selection-start="407" selection-end="407" vertical-scroll-proportion="-3.9230769">
+            <state line="14" column="84" selection-start="670" selection-end="670" vertical-scroll-proportion="-0.65384614">
               <folding />
             </state>
           </provider>
@@ -120,7 +126,7 @@
       <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/www/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="0" selection-start="355" selection-end="355" vertical-scroll-proportion="0.30749354">
+            <state line="97" column="41" selection-start="3678" selection-end="3678" vertical-scroll-proportion="1.081081">
               <folding />
             </state>
           </provider>
@@ -129,7 +135,7 @@
       <file leaf-file-name="custom.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/www/css/custom.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="12" selection-start="801" selection-end="801" vertical-scroll-proportion="0.0">
+            <state line="70" column="1" selection-start="1059" selection-end="1059" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -162,8 +168,6 @@
         <option value="$PROJECT_DIR$/src/com/Osu/SecuritySystem/MainApplication.java" />
         <option value="$PROJECT_DIR$/src/com/Osu/SecuritySystem/SendAPID.java" />
         <option value="$PROJECT_DIR$/res/xml/config.xml" />
-        <option value="$PROJECT_DIR$/src/com/Osu/SecuritySystem/getAPID.java" />
-        <option value="$PROJECT_DIR$/src/com/Osu/SecuritySystem/SecuritySystem.java" />
         <option value="$PROJECT_DIR$/README" />
         <option value="$PROJECT_DIR$/assets/www/res/sensor.handlebars" />
         <option value="$PROJECT_DIR$/assets/www/sensor-view.handlebars" />
@@ -171,9 +175,11 @@
         <option value="$PROJECT_DIR$/assets/www/sensor.handlebars" />
         <option value="$PROJECT_DIR$/assets/www/css/custom.css" />
         <option value="$PROJECT_DIR$/assets/www/config.xml" />
-        <option value="$PROJECT_DIR$/assets/www/js/app.js" />
         <option value="$PROJECT_DIR$/assets/www/overrides.js" />
         <option value="$PROJECT_DIR$/assets/www/index.html" />
+        <option value="$PROJECT_DIR$/src/com/Osu/SecuritySystem/getAPID.java" />
+        <option value="$PROJECT_DIR$/src/com/Osu/SecuritySystem/SecuritySystem.java" />
+        <option value="$PROJECT_DIR$/assets/www/js/app.js" />
       </list>
     </option>
   </component>
@@ -241,6 +247,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="SecuritySystem-Android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SecuritySystem-Android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SecuritySystem-Android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SecuritySystem" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -341,11 +365,11 @@
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="true" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -380,7 +404,7 @@
     <option name="referencePos" value="0" />
     <option name="showLabels" value="true" />
   </component>
-  <component name="RunManager" selected="Android Application.Emulator">
+  <component name="RunManager" selected="Android Application.USB Device">
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="" />
       <option name="TESTING_TYPE" value="0" />
@@ -434,13 +458,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
-      <JSDebuggerConfigurationSettings>
-        <option name="engineId" value="embedded" />
-        <option name="fileUrl" />
-      </JSDebuggerConfigurationSettings>
-      <method />
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -460,6 +477,13 @@
       </option>
       <envs />
       <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
       <method />
     </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -641,10 +665,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.319202" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.319202" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39800996" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -761,6 +785,27 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/assets/www/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="84" selection-start="670" selection-end="670" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="0" selection-start="319" selection-end="319" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/css/custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="70" column="1" selection-start="1059" selection-end="1059" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/codekit-config.json">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-11.497006" />
@@ -769,13 +814,6 @@
     <entry file="file://$PROJECT_DIR$/project.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/Osu/SecuritySystem/SecuritySystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="13" selection-start="1027" selection-end="1027" vertical-scroll-proportion="0.13953489">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/js/app-ck.js">
@@ -793,11 +831,6 @@
         <state line="10" column="38" selection-start="444" selection-end="444" vertical-scroll-proportion="0.23066486" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/sensorview.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="23" selection-start="952" selection-end="952" vertical-scroll-proportion="0.39319727" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-2.2730844">
@@ -812,30 +845,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/overrides.js">
+    <entry file="file://$PROJECT_DIR$/assets/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="44" selection-start="338" selection-end="338" vertical-scroll-proportion="0.17571059">
+        <state line="14" column="84" selection-start="670" selection-end="670" vertical-scroll-proportion="-0.65384614">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/css/custom.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="12" selection-start="801" selection-end="801" vertical-scroll-proportion="0.0">
+        <state line="70" column="1" selection-start="1059" selection-end="1059" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/index.html">
+    <entry file="file://$PROJECT_DIR$/src/com/Osu/SecuritySystem/MainApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="84" selection-start="407" selection-end="407" vertical-scroll-proportion="-3.9230769">
+        <state line="8" column="13" selection-start="188" selection-end="188" vertical-scroll-proportion="0.087855294">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/Osu/SecuritySystem/getAPID.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="31" selection-start="467" selection-end="480" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/Osu/SecuritySystem/SecuritySystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="50" selection-start="1300" selection-end="1300" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="355" selection-end="355" vertical-scroll-proportion="0.30749354">
+        <state line="97" column="41" selection-start="3678" selection-end="3678" vertical-scroll-proportion="1.081081">
           <folding />
         </state>
       </provider>

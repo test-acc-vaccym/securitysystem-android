@@ -27,30 +27,14 @@ import com.urbanairship.UAirship;
 
 public class SecuritySystem extends DroidGap
 {
-    getAPID apid;
-
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         super.init();
-        apid = new getAPID(this, appView);
-        appView.addJavascriptInterface(apid, "getAPID");
+        getAPID apid = new getAPID(this, appView);
+        appView.addJavascriptInterface(apid, "apid");
         super.loadUrl("file:///android_asset/www/index.html");
     }
-
-    /*    Uairship analytics (broken)
-    @Override
-    public void onStart() {
-        super.onStart();
-        UAirship.shared().getAnalytics().activityStarted(this);
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        UAirship.shared().getAnalytics().activityStopped(this);
-    }
-    */
 }
 

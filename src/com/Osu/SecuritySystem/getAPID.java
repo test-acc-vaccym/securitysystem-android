@@ -16,7 +16,7 @@ public class getAPID {
         mAppView = view;
         mGap = gap;
     }
-    public String getAPID(){
+    public String getDeviceAPID(){
         PushPreferences prefs = PushManager.shared().getPreferences();
         return prefs.getPushId();
     }
