@@ -6,6 +6,8 @@ jQuery(function ($) {
 var App = {
     init: function(){
         this.apiURL = 'https://securitysystem.herokuapp.com';
+        this.apiUser = 'pi';
+        this.apiPass = 'jake=hacker';  //lol super secure
         this.oldKey = "";
         this.sensors = [];
         this.cacheElements();
@@ -91,6 +93,8 @@ var App = {
         $.ajax({
             type: "POST",
             url: App.apiURL+"/sensors/",
+            username: App.apiUser,
+            password: App.apiPass,
             data: {sensor: { name:name, sensor_id:id, enabled:true, tripped:false, client_apid:pushID }}
         }).done(function() {
             $.mobile.loading('hide');
@@ -111,6 +115,8 @@ var App = {
         $.ajax({
             type: "PUT",
             url: App.apiURL+"/sensors/"+App.oldKey,
+            username: App.apiUser,
+            password: App.apiPass,
             data: {sensor: { name:App.$editSensorName.val(), sensor_id:App.$editSensorKey.val() }}
         }).done(function(){
                 window.history.back();
@@ -119,7 +125,9 @@ var App = {
     submitDelete: function(){
         $.ajax({
             type: "DELETE",
-            url: App.apiURL+"/sensors/"+App.oldKey
+            url: App.apiURL+"/sensors/"+App.oldKey,
+            username: App.apiUser,
+            password: App.apiPass
         });
     },
     submitSave: function(event){
@@ -130,6 +138,8 @@ var App = {
         $.ajax({
             type: "PUT",
             url: App.apiURL+"/sensors/"+$('span.view-sensor-key').text(),
+            username: App.apiUser,
+            password: App.apiPass,
             data: {sensor: { enabled: enabled.val(), tripped: tripped_bool }}
         }).done(function(){
                 App.fetchSensors();
