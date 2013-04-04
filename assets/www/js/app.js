@@ -45,11 +45,16 @@ var App = {
     fetchSensors: function(){
         try{
             $.mobile.loading('show');
-            $.getJSON(App.apiURL+'/sensors.json', function(data){
-                App.sensors = data;
-                App.refreshSensorList();
-                $.mobile.loading('hide');
-                return false;
+            $.ajax({
+                dataType: "json",
+                url: App.apiURL+'/sensors.json',
+                username: App.apiUser,
+                password: App.apiPass
+            }).success(function(data){
+                    App.sensors = data;
+                    App.refreshSensorList();
+                    $.mobile.loading('hide');
+                    return false;
             });
         }
         catch(error){
