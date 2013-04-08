@@ -49,7 +49,11 @@ var App = {
                 dataType: "json",
                 url: App.apiURL+'/sensors.json',
                 username: App.apiUser,
-                password: App.apiPass
+                password: App.apiPass,
+                crossDomain: true,
+                beforeSend: function(req){
+                    req.setRequestHeader('Authorization', App.make_base_auth(App.apiUser, App.apiPass));
+                }
             }).success(function(data){
                     App.sensors = data;
                     App.refreshSensorList();
@@ -60,6 +64,11 @@ var App = {
         catch(error){
             alert("Couldn't get the sensor list!"+error);
         }
+    },
+    make_base_auth: function(user, pass) {
+        var tok = user + ':' + pass;
+        var hash = window.btoa(tok);
+        return "Basic " + hash;
     },
     refreshSensorList: function(){
         App.$sensorList.html(App.listTemplate(App.sensors));
@@ -100,6 +109,10 @@ var App = {
             url: App.apiURL+"/sensors/",
             username: App.apiUser,
             password: App.apiPass,
+            crossDomain: true,
+            beforeSend: function(req){
+                req.setRequestHeader('Authorization', App.make_base_auth(App.apiUser, App.apiPass));
+            },
             data: {sensor: { name:name, sensor_id:id, enabled:true, tripped:false, client_apid:pushID }}
         }).done(function() {
             $.mobile.loading('hide');
@@ -122,6 +135,10 @@ var App = {
             url: App.apiURL+"/sensors/"+App.oldKey,
             username: App.apiUser,
             password: App.apiPass,
+            crossDomain: true,
+            beforeSend: function(req){
+                req.setRequestHeader('Authorization', App.make_base_auth(App.apiUser, App.apiPass));
+            },
             data: {sensor: { name:App.$editSensorName.val(), sensor_id:App.$editSensorKey.val() }}
         }).done(function(){
                 window.history.back();
@@ -132,7 +149,11 @@ var App = {
             type: "DELETE",
             url: App.apiURL+"/sensors/"+App.oldKey,
             username: App.apiUser,
-            password: App.apiPass
+            password: App.apiPass,
+            crossDomain: true,
+            beforeSend: function(req){
+                req.setRequestHeader('Authorization', App.make_base_auth(App.apiUser, App.apiPass));
+            }
         });
     },
     submitSave: function(event){
@@ -145,6 +166,10 @@ var App = {
             url: App.apiURL+"/sensors/"+$('span.view-sensor-key').text(),
             username: App.apiUser,
             password: App.apiPass,
+            crossDomain: true,
+            beforeSend: function(req){
+                req.setRequestHeader('Authorization', App.make_base_auth(App.apiUser, App.apiPass));
+            },
             data: {sensor: { enabled: enabled.val(), tripped: tripped_bool }}
         }).done(function(){
                 App.fetchSensors();
@@ -188,7 +213,10 @@ var App = {
     }
 };
 
-    App.init();
+    window.addEventListener('load', function() {
+        App.init();
+    }, false);
+    //App.init();
 
 });
 
